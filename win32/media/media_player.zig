@@ -8024,7 +8024,7 @@ pub const IWMPContentPartnerCallback = extern union {
         base: IUnknown.VTable,
         Notify: *const fn(
             self: *const IWMPContentPartnerCallback,
-            type: WMPCallbackNotification,
+            @"type": WMPCallbackNotification,
             pContext: ?*VARIANT,
         ) callconv(.winapi) HRESULT,
         BuyComplete: *const fn(
@@ -8150,7 +8150,7 @@ pub const IWMPContentPartner = extern union {
         ) callconv(.winapi) HRESULT,
         Notify: *const fn(
             self: *const IWMPContentPartner,
-            type: WMPPartnerNotification,
+            @"type": WMPPartnerNotification,
             pContext: ?*VARIANT,
         ) callconv(.winapi) HRESULT,
         GetItemInfo: *const fn(
@@ -8216,7 +8216,7 @@ pub const IWMPContentPartner = extern union {
             dwCookie: u32,
             fLocal: i16,
             bstrURL: ?BSTR,
-            type: WMPStreamingType,
+            @"type": WMPStreamingType,
             contentID: u32,
             bstrRefreshReason: ?BSTR,
             pReasonContext: ?*VARIANT,

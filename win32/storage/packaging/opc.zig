@@ -792,7 +792,7 @@ pub const IOpcSignatureReference = extern union {
         ) callconv(.winapi) HRESULT,
         GetType: *const fn(
             self: *const IOpcSignatureReference,
-            type: ?*?PWSTR,
+            @"type": ?*?PWSTR,
         ) callconv(.winapi) HRESULT,
         GetTransformMethod: *const fn(
             self: *const IOpcSignatureReference,
@@ -1569,7 +1569,7 @@ pub const IOpcSignatureReferenceSet = extern union {
             self: *const IOpcSignatureReferenceSet,
             referenceUri: ?*IUri,
             referenceId: ?[*:0]const u16,
-            type: ?[*:0]const u16,
+            @"type": ?[*:0]const u16,
             digestMethod: ?[*:0]const u16,
             transformMethod: OPC_CANONICALIZATION_METHOD,
             reference: ?*?*IOpcSignatureReference,

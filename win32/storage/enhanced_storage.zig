@@ -1414,7 +1414,7 @@ pub const SILO_INFO = extern struct {
     SpecificationMinor: u8,
     ImplementationMajor: u8,
     ImplementationMinor: u8,
-    type: u8,
+    @"type": u8,
     capabilities: u8,
 };
 

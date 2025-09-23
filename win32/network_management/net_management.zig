@@ -6561,7 +6561,7 @@ pub extern "netapi32" fn NetAuditRead(
 ) callconv(.winapi) u32;
 
 pub extern "netapi32" fn NetAuditWrite(
-    type: u32,
+    @"type": u32,
     buf: ?*u8,
     numbytes: u32,
     service: ?[*:0]const u16,

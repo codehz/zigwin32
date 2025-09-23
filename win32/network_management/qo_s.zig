@@ -753,11 +753,11 @@ pub const IS_FLOWSPEC = extern struct {
 };
 
 pub const flow_desc = extern struct {
-    u1: extern union {
+    @"u1": extern union {
         stspec: ?*SENDER_TSPEC,
         isflow: ?*IS_FLOWSPEC,
     },
-    u2: extern union {
+    @"u2": extern union {
         stemp: ?*FILTER_SPEC,
         fspec: ?*FILTER_SPEC,
     },

@@ -3452,12 +3452,12 @@ pub const IFsrmPropertyCondition = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_Type: *const fn(
             self: *const IFsrmPropertyCondition,
-            type: ?*FsrmPropertyConditionType,
+            @"type": ?*FsrmPropertyConditionType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         put_Type: *const fn(
             self: *const IFsrmPropertyCondition,
-            type: FsrmPropertyConditionType,
+            @"type": FsrmPropertyConditionType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_Value: *const fn(
@@ -3636,12 +3636,12 @@ pub const IFsrmPropertyDefinition = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_Type: *const fn(
             self: *const IFsrmPropertyDefinition,
-            type: ?*FsrmPropertyDefinitionType,
+            @"type": ?*FsrmPropertyDefinitionType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         put_Type: *const fn(
             self: *const IFsrmPropertyDefinition,
-            type: FsrmPropertyDefinitionType,
+            @"type": FsrmPropertyDefinitionType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_PossibleValues: *const fn(

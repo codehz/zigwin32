@@ -3623,12 +3623,8 @@ _,
     }
     pub fn format(
         self: WINDOW_LONG_PTR_INDEX,
-        comptime fmt: []const u8,
-        options: @import("std").fmt.FormatOptions,
         writer: anytype,
     ) !void {
-        _ = fmt;
-        _ = options;
         try writer.print("{s}({})", .{self.value.tagName() orelse "?", @intFromEnum(self.value)});
     }
 };
@@ -8152,7 +8148,7 @@ pub extern "user32" fn CreateIconFromResourceEx(
 pub extern "user32" fn LoadImageA(
     hInst: ?HINSTANCE,
     name: ?[*:0]align(1) const u8,
-    type: GDI_IMAGE_TYPE,
+    @"type": GDI_IMAGE_TYPE,
     cx: i32,
     cy: i32,
     fuLoad: IMAGE_FLAGS,
@@ -8162,7 +8158,7 @@ pub extern "user32" fn LoadImageA(
 pub extern "user32" fn LoadImageW(
     hInst: ?HINSTANCE,
     name: ?[*:0]align(1) const u16,
-    type: GDI_IMAGE_TYPE,
+    @"type": GDI_IMAGE_TYPE,
     cx: i32,
     cy: i32,
     fuLoad: IMAGE_FLAGS,
@@ -8171,7 +8167,7 @@ pub extern "user32" fn LoadImageW(
 // TODO: this type is limited to platform 'windows5.0'
 pub extern "user32" fn CopyImage(
     h: ?HANDLE,
-    type: GDI_IMAGE_TYPE,
+    @"type": GDI_IMAGE_TYPE,
     cx: i32,
     cy: i32,
     flags: IMAGE_FLAGS,

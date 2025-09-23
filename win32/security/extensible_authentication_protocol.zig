@@ -829,7 +829,7 @@ pub const IEAPProviderConfig3 = extern union {
 };
 
 pub const EAP_TYPE = extern struct {
-    type: u8,
+    @"type": u8,
     dwVendorId: u32,
     dwVendorType: u32,
 };
@@ -867,7 +867,7 @@ pub const EAP_METHOD_INFO_ARRAY_EX = extern struct {
 
 pub const EAP_ERROR = extern struct {
     dwWinError: u32,
-    type: EAP_METHOD_TYPE,
+    @"type": EAP_METHOD_TYPE,
     dwReasonCode: u32,
     rootCauseGuid: Guid,
     repairGuid: Guid,

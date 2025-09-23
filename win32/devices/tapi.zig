@@ -9951,7 +9951,7 @@ pub const _ADDR_ALIAS = extern struct {
     rgchEName: [11]CHAR,
     rgchSrvr: [12]CHAR,
     dibDetail: u32,
-    type: u16,
+    @"type": u16,
 };
 
 pub const NSID = extern struct {

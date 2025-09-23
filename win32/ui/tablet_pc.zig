@@ -8885,7 +8885,7 @@ pub const RECO_LATTICE_PROPERTIES = extern struct {
 
 pub const RECO_LATTICE_ELEMENT = extern struct {
     score: i32,
-    type: u16,
+    @"type": u16,
     pData: ?*u8,
     ulNextColumn: u32,
     ulStrokeNumber: u32,

@@ -948,7 +948,7 @@ pub const ISequentialStream = extern union {
 
 pub const STATSTG = extern struct {
     pwcsName: ?PWSTR,
-    type: u32,
+    @"type": u32,
     cbSize: ULARGE_INTEGER,
     mtime: FILETIME,
     ctime: FILETIME,

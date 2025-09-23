@@ -27469,12 +27469,12 @@ pub const IModelObject = extern union {
         ) callconv(.winapi) HRESULT,
         GetTypeInfo: *const fn(
             self: *const IModelObject,
-            type: ?*?*IDebugHostType,
+            @"type": ?*?*IDebugHostType,
         ) callconv(.winapi) HRESULT,
         GetTargetInfo: *const fn(
             self: *const IModelObject,
             location: ?*Location,
-            type: ?*?*IDebugHostType,
+            @"type": ?*?*IDebugHostType,
         ) callconv(.winapi) HRESULT,
         GetNumberOfParentModels: *const fn(
             self: *const IModelObject,
@@ -27722,7 +27722,7 @@ pub const IDataModelManager = extern union {
         CreateTypedIntrinsicObject: *const fn(
             self: *const IDataModelManager,
             intrinsicData: ?*VARIANT,
-            type: ?*IDebugHostType,
+            @"type": ?*IDebugHostType,
             object: **IModelObject,
         ) callconv(.winapi) HRESULT,
         GetModelForTypeSignature: *const fn(
@@ -27732,7 +27732,7 @@ pub const IDataModelManager = extern union {
         ) callconv(.winapi) HRESULT,
         GetModelForType: *const fn(
             self: *const IDataModelManager,
-            type: ?*IDebugHostType,
+            @"type": ?*IDebugHostType,
             dataModel: **IModelObject,
             typeSignature: ?**IDebugHostTypeSignature,
             wildcardMatches: ?**IDebugHostSymbolEnumerator,
@@ -28278,7 +28278,7 @@ pub const IDebugHostSymbol = extern union {
         ) callconv(.winapi) HRESULT,
         GetType: *const fn(
             self: *const IDebugHostSymbol,
-            type: ?*?*IDebugHostType,
+            @"type": ?*?*IDebugHostType,
         ) callconv(.winapi) HRESULT,
         GetContainingModule: *const fn(
             self: *const IDebugHostSymbol,
@@ -28361,7 +28361,7 @@ pub const IDebugHostModule = extern union {
         FindTypeByName: *const fn(
             self: *const IDebugHostModule,
             typeName: ?[*:0]const u16,
-            type: ?*?*IDebugHostType,
+            @"type": ?*?*IDebugHostType,
         ) callconv(.winapi) HRESULT,
         FindSymbolByRVA: *const fn(
             self: *const IDebugHostModule,
@@ -28902,7 +28902,7 @@ pub const IDebugHostTypeSignature = extern union {
         ) callconv(.winapi) HRESULT,
         IsMatch: *const fn(
             self: *const IDebugHostTypeSignature,
-            type: ?*IDebugHostType,
+            @"type": ?*IDebugHostType,
             isMatch: ?*bool,
             wildcardMatches: ?**IDebugHostSymbolEnumerator,
         ) callconv(.winapi) HRESULT,
@@ -29529,7 +29529,7 @@ pub const IDataModelManager2 = extern union {
             self: *const IDataModelManager2,
             context: ?*IDebugHostContext,
             intrinsicData: ?*VARIANT,
-            type: ?*IDebugHostType,
+            @"type": ?*IDebugHostType,
             object: **IModelObject,
         ) callconv(.winapi) HRESULT,
     };
@@ -37159,7 +37159,7 @@ pub const IActiveScriptProfilerCallback = extern union {
         ScriptCompiled: *const fn(
             self: *const IActiveScriptProfilerCallback,
             scriptId: i32,
-            type: PROFILER_SCRIPT_TYPE,
+            @"type": PROFILER_SCRIPT_TYPE,
             pIDebugDocumentContext: ?*IUnknown,
         ) callconv(.winapi) HRESULT,
         FunctionCompiled: *const fn(
@@ -37211,12 +37211,12 @@ pub const IActiveScriptProfilerCallback2 = extern union {
         OnFunctionEnterByName: *const fn(
             self: *const IActiveScriptProfilerCallback2,
             pwszFunctionName: ?[*:0]const u16,
-            type: PROFILER_SCRIPT_TYPE,
+            @"type": PROFILER_SCRIPT_TYPE,
         ) callconv(.winapi) HRESULT,
         OnFunctionExitByName: *const fn(
             self: *const IActiveScriptProfilerCallback2,
             pwszFunctionName: ?[*:0]const u16,
-            type: PROFILER_SCRIPT_TYPE,
+            @"type": PROFILER_SCRIPT_TYPE,
         ) callconv(.winapi) HRESULT,
     };
     vtable: *const VTable,
@@ -37822,7 +37822,7 @@ pub const PENUMSOURCEFILETOKENSCALLBACK = *const fn(
 
 pub const IMAGEHLP_SYMBOL_SRC = extern struct {
     sizeofstruct: u32,
-    type: u32,
+    @"type": u32,
     file: [260]CHAR,
 };
 
@@ -39424,7 +39424,7 @@ pub const JS_PROPERTY_FRAME_INFINALLYBLOCK = JS_PROPERTY_ATTRIBUTES.FRAME_INFINA
 
 pub const JsDebugPropertyInfo = extern struct {
     name: ?BSTR,
-    type: ?BSTR,
+    @"type": ?BSTR,
     value: ?BSTR,
     fullName: ?BSTR,
     attr: JS_PROPERTY_ATTRIBUTES,
@@ -42067,13 +42067,13 @@ pub extern "dbghelp" fn SymSetHomeDirectoryW(
 ) callconv(.winapi) ?PWSTR;
 
 pub extern "dbghelp" fn SymGetHomeDirectory(
-    type: IMAGEHLP_HD_TYPE,
+    @"type": IMAGEHLP_HD_TYPE,
     dir: [*:0]u8,
     size: usize,
 ) callconv(.winapi) ?PSTR;
 
 pub extern "dbghelp" fn SymGetHomeDirectoryW(
-    type: IMAGEHLP_HD_TYPE,
+    @"type": IMAGEHLP_HD_TYPE,
     dir: [*:0]u16,
     size: usize,
 ) callconv(.winapi) ?PWSTR;

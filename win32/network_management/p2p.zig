@@ -267,7 +267,7 @@ pub const PEER_DATA = extern struct {
 
 pub const PEER_RECORD = extern struct {
     dwSize: u32,
-    type: Guid,
+    @"type": Guid,
     id: Guid,
     dwVersion: u32,
     dwFlags: u32,
@@ -298,7 +298,7 @@ pub const PEER_CONNECTION_INFO = extern struct {
 pub const PEER_EVENT_INCOMING_DATA = extern struct {
     dwSize: u32,
     ullConnectionId: u64,
-    type: Guid,
+    @"type": Guid,
     data: PEER_DATA,
 };
 
@@ -1031,13 +1031,13 @@ pub const DRT_ADDRESS_LIST = extern struct {
 
 pub const DRT_SEARCH_RESULT = extern struct {
     dwSize: u32,
-    type: DRT_MATCH_TYPE,
+    @"type": DRT_MATCH_TYPE,
     pvContext: ?*anyopaque,
     registration: DRT_REGISTRATION,
 };
 
 pub const DRT_EVENT_DATA = extern struct {
-    type: DRT_EVENT_TYPE,
+    @"type": DRT_EVENT_TYPE,
     hr: HRESULT,
     pvContext: ?*anyopaque,
     Anonymous: extern union {

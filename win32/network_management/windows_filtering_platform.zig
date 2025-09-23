@@ -1142,7 +1142,7 @@ pub const FWP_TOKEN_INFORMATION = extern struct {
 };
 
 pub const FWP_VALUE0 = extern struct {
-    type: FWP_DATA_TYPE,
+    @"type": FWP_DATA_TYPE,
     Anonymous: extern union {
         uint8: u8,
         uint16: u16,
@@ -1212,7 +1212,7 @@ pub const FWP_RANGE0 = extern struct {
 };
 
 pub const FWP_CONDITION_VALUE0 = extern struct {
-    type: FWP_DATA_TYPE,
+    @"type": FWP_DATA_TYPE,
     Anonymous: extern union {
         uint8: u8,
         uint16: u16,
@@ -2401,7 +2401,7 @@ pub const IPSEC_TOKEN_MODE_EXTENDED = IPSEC_TOKEN_MODE.EXTENDED;
 pub const IPSEC_TOKEN_MODE_MAX = IPSEC_TOKEN_MODE.MAX;
 
 pub const IPSEC_TOKEN0 = extern struct {
-    type: IPSEC_TOKEN_TYPE,
+    @"type": IPSEC_TOKEN_TYPE,
     principal: IPSEC_TOKEN_PRINCIPAL,
     mode: IPSEC_TOKEN_MODE,
     token: u64,
@@ -2763,7 +2763,7 @@ pub const FWPM_PROVIDER_SUBSCRIPTION0 = extern struct {
 };
 
 pub const FWPM_CLASSIFY_OPTION0 = extern struct {
-    type: FWP_CLASSIFY_OPTION_TYPE,
+    @"type": FWP_CLASSIFY_OPTION_TYPE,
     value: FWP_VALUE0,
 };
 
@@ -2809,7 +2809,7 @@ pub const FWPM_PROVIDER_CONTEXT0 = extern struct {
     flags: u32,
     providerKey: ?*Guid,
     providerData: FWP_BYTE_BLOB,
-    type: FWPM_PROVIDER_CONTEXT_TYPE,
+    @"type": FWPM_PROVIDER_CONTEXT_TYPE,
     Anonymous: extern union {
         keyingPolicy: ?*IPSEC_KEYING_POLICY0,
         ikeQmTransportPolicy: ?*IPSEC_TRANSPORT_POLICY0,
@@ -2830,7 +2830,7 @@ pub const FWPM_PROVIDER_CONTEXT1 = extern struct {
     flags: u32,
     providerKey: ?*Guid,
     providerData: FWP_BYTE_BLOB,
-    type: FWPM_PROVIDER_CONTEXT_TYPE,
+    @"type": FWPM_PROVIDER_CONTEXT_TYPE,
     Anonymous: extern union {
         keyingPolicy: ?*IPSEC_KEYING_POLICY0,
         ikeQmTransportPolicy: ?*IPSEC_TRANSPORT_POLICY1,
@@ -2854,7 +2854,7 @@ pub const FWPM_PROVIDER_CONTEXT2 = extern struct {
     flags: u32,
     providerKey: ?*Guid,
     providerData: FWP_BYTE_BLOB,
-    type: FWPM_PROVIDER_CONTEXT_TYPE,
+    @"type": FWPM_PROVIDER_CONTEXT_TYPE,
     Anonymous: extern union {
         keyingPolicy: ?*IPSEC_KEYING_POLICY1,
         ikeQmTransportPolicy: ?*IPSEC_TRANSPORT_POLICY2,
@@ -2879,7 +2879,7 @@ pub const FWPM_PROVIDER_CONTEXT3_ = extern struct {
     flags: u32,
     providerKey: ?*Guid,
     providerData: FWP_BYTE_BLOB,
-    type: FWPM_PROVIDER_CONTEXT_TYPE,
+    @"type": FWPM_PROVIDER_CONTEXT_TYPE,
     Anonymous: extern union {
         keyingPolicy: ?*IPSEC_KEYING_POLICY1,
         ikeQmTransportPolicy: ?*IPSEC_TRANSPORT_POLICY2,
@@ -2952,7 +2952,7 @@ pub const FWPM_FIELD_TYPE_MAX = FWPM_FIELD_TYPE.TYPE_MAX;
 
 pub const FWPM_FIELD0 = extern struct {
     fieldKey: ?*Guid,
-    type: FWPM_FIELD_TYPE,
+    @"type": FWPM_FIELD_TYPE,
     dataType: FWP_DATA_TYPE,
 };
 
@@ -2998,7 +2998,7 @@ pub const FWPM_CALLOUT_SUBSCRIPTION0 = extern struct {
 };
 
 pub const FWPM_ACTION0 = extern struct {
-    type: u32,
+    @"type": u32,
     Anonymous: extern union {
         filterType: Guid,
         calloutKey: Guid,
@@ -3461,7 +3461,7 @@ pub const FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_ = extern struct {
 
 pub const FWPM_NET_EVENT0 = extern struct {
     header: FWPM_NET_EVENT_HEADER0,
-    type: FWPM_NET_EVENT_TYPE,
+    @"type": FWPM_NET_EVENT_TYPE,
     Anonymous: extern union {
         ikeMmFailure: ?*FWPM_NET_EVENT_IKEEXT_MM_FAILURE0,
         ikeQmFailure: ?*FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -3474,7 +3474,7 @@ pub const FWPM_NET_EVENT0 = extern struct {
 
 pub const FWPM_NET_EVENT1 = extern struct {
     header: FWPM_NET_EVENT_HEADER1,
-    type: FWPM_NET_EVENT_TYPE,
+    @"type": FWPM_NET_EVENT_TYPE,
     Anonymous: extern union {
         ikeMmFailure: ?*FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
         ikeQmFailure: ?*FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -3487,7 +3487,7 @@ pub const FWPM_NET_EVENT1 = extern struct {
 
 pub const FWPM_NET_EVENT2 = extern struct {
     header: FWPM_NET_EVENT_HEADER2,
-    type: FWPM_NET_EVENT_TYPE,
+    @"type": FWPM_NET_EVENT_TYPE,
     Anonymous: extern union {
         ikeMmFailure: ?*FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
         ikeQmFailure: ?*FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -3504,7 +3504,7 @@ pub const FWPM_NET_EVENT2 = extern struct {
 
 pub const FWPM_NET_EVENT3 = extern struct {
     header: FWPM_NET_EVENT_HEADER3,
-    type: FWPM_NET_EVENT_TYPE,
+    @"type": FWPM_NET_EVENT_TYPE,
     Anonymous: extern union {
         ikeMmFailure: ?*FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
         ikeQmFailure: ?*FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -3521,7 +3521,7 @@ pub const FWPM_NET_EVENT3 = extern struct {
 
 pub const FWPM_NET_EVENT4_ = extern struct {
     header: FWPM_NET_EVENT_HEADER3,
-    type: FWPM_NET_EVENT_TYPE,
+    @"type": FWPM_NET_EVENT_TYPE,
     Anonymous: extern union {
         ikeMmFailure: ?*FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_,
         ikeQmFailure: ?*FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_,
@@ -3538,7 +3538,7 @@ pub const FWPM_NET_EVENT4_ = extern struct {
 
 pub const FWPM_NET_EVENT5_ = extern struct {
     header: FWPM_NET_EVENT_HEADER3,
-    type: FWPM_NET_EVENT_TYPE,
+    @"type": FWPM_NET_EVENT_TYPE,
     Anonymous: extern union {
         ikeMmFailure: ?*FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_,
         ikeQmFailure: ?*FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_,
@@ -3581,7 +3581,7 @@ pub const FWPM_SYSTEM_PORT_IPHTTPS_OUT = FWPM_SYSTEM_PORT_TYPE.IPHTTPS_OUT;
 pub const FWPM_SYSTEM_PORT_TYPE_MAX = FWPM_SYSTEM_PORT_TYPE.TYPE_MAX;
 
 pub const FWPM_SYSTEM_PORTS_BY_TYPE0 = extern struct {
-    type: FWPM_SYSTEM_PORT_TYPE,
+    @"type": FWPM_SYSTEM_PORT_TYPE,
     numPorts: u32,
     ports: ?*u16,
 };

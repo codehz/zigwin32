@@ -360,13 +360,13 @@ pub const IMLOperatorAttributes = extern union {
         GetAttributeElementCount: *const fn(
             self: *const IMLOperatorAttributes,
             name: ?[*:0]const u8,
-            type: MLOperatorAttributeType,
+            @"type": MLOperatorAttributeType,
             elementCount: ?*u32,
         ) callconv(.winapi) HRESULT,
         GetAttribute: *const fn(
             self: *const IMLOperatorAttributes,
             name: ?[*:0]const u8,
-            type: MLOperatorAttributeType,
+            @"type": MLOperatorAttributeType,
             elementCount: u32,
             elementByteSize: usize,
             value: ?*anyopaque,
@@ -866,13 +866,13 @@ pub const IMLOperatorShapeInferrer = extern union {
 
 pub const MLOperatorAttribute = extern struct {
     name: ?[*:0]const u8,
-    type: MLOperatorAttributeType,
+    @"type": MLOperatorAttributeType,
     required: bool,
 };
 
 pub const MLOperatorAttributeNameValue = extern struct {
     name: ?[*:0]const u8,
-    type: MLOperatorAttributeType,
+    @"type": MLOperatorAttributeType,
     valueCount: u32,
     Anonymous: extern union {
         reserved: ?*const anyopaque,

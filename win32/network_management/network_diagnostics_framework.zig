@@ -86,7 +86,7 @@ pub const DIAG_SOCKADDR = extern struct {
 
 pub const HELPER_ATTRIBUTE = extern struct {
     pwszName: ?PWSTR,
-    type: ATTRIBUTE_TYPE,
+    @"type": ATTRIBUTE_TYPE,
     Anonymous: extern union {
         Boolean: BOOL,
         Char: u8,
@@ -147,7 +147,7 @@ pub const ShellCommandInfo = extern struct {
 };
 
 pub const UiInfo = extern struct {
-    type: UI_INFO_TYPE,
+    @"type": UI_INFO_TYPE,
     Anonymous: extern union {
         pwzNull: ?PWSTR,
         ShellInfo: ShellCommandInfo,
@@ -237,7 +237,7 @@ pub const HYPOTHESIS = extern struct {
 
 pub const HelperAttributeInfo = extern struct {
     pwszName: ?PWSTR,
-    type: ATTRIBUTE_TYPE,
+    @"type": ATTRIBUTE_TYPE,
 };
 
 pub const DiagnosticsInfo = extern struct {

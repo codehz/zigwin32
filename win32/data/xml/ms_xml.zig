@@ -673,7 +673,7 @@ pub const IXMLDOMNode = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_nodeType: *const fn(
             self: *const IXMLDOMNode,
-            type: ?*DOMNodeType,
+            @"type": ?*DOMNodeType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_parentNode: *const fn(
@@ -5879,7 +5879,7 @@ pub const ISchemaAttribute = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_type: *const fn(
             self: *const ISchemaAttribute,
-            type: ?*?*ISchemaType,
+            @"type": ?*?*ISchemaType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_scope: *const fn(
@@ -5939,7 +5939,7 @@ pub const ISchemaElement = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_type: *const fn(
             self: *const ISchemaElement,
-            type: ?*?*ISchemaType,
+            @"type": ?*?*ISchemaType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_scope: *const fn(

@@ -971,7 +971,7 @@ pub const VDS_ASYNCOUT_MERGE_VDISK = VDS_ASYNC_OUTPUT_TYPE.MERGE_VDISK;
 pub const VDS_ASYNCOUT_EXPAND_VDISK = VDS_ASYNC_OUTPUT_TYPE.EXPAND_VDISK;
 
 pub const VDS_ASYNC_OUTPUT = extern struct {
-    type: VDS_ASYNC_OUTPUT_TYPE,
+    @"type": VDS_ASYNC_OUTPUT_TYPE,
     Anonymous: extern union {
         pub const _cpg = extern struct {
             pPortalGroupUnk: ?*IUnknown,
@@ -1271,7 +1271,7 @@ pub const VDS_WWN = extern struct {
 };
 
 pub const VDS_IPADDRESS = extern struct {
-    type: VDS_IPADDRESS_TYPE,
+    @"type": VDS_IPADDRESS_TYPE,
     ipv4Address: u32,
     ipv6Address: [16]u8,
     ulIpv6FlowInfo: u32,
@@ -1294,7 +1294,7 @@ pub const VDS_HBAPORT_PROP = extern struct {
     id: Guid,
     wwnNode: VDS_WWN,
     wwnPort: VDS_WWN,
-    type: VDS_HBAPORT_TYPE,
+    @"type": VDS_HBAPORT_TYPE,
     status: VDS_HBAPORT_STATUS,
     ulPortSpeed: u32,
     ulSupportedPortSpeed: u32,
@@ -1316,7 +1316,7 @@ pub const VDS_PROVIDER_PROP = extern struct {
     pwszName: ?PWSTR,
     guidVersionId: Guid,
     pwszVersion: ?PWSTR,
-    type: VDS_PROVIDER_TYPE,
+    @"type": VDS_PROVIDER_TYPE,
     ulFlags: u32,
     ulStripeSizeFlags: u32,
     sRebuildPriority: i16,
@@ -1324,7 +1324,7 @@ pub const VDS_PROVIDER_PROP = extern struct {
 
 pub const VDS_PATH_INFO = extern struct {
     pathId: VDS_PATH_ID,
-    type: VDS_HWPROVIDER_TYPE,
+    @"type": VDS_HWPROVIDER_TYPE,
     status: VDS_PATH_STATUS,
     Anonymous1: extern union {
         controllerPortId: Guid,
@@ -1483,7 +1483,7 @@ pub const IVdsProviderPrivate = extern union {
         GetObject: *const fn(
             self: *const IVdsProviderPrivate,
             ObjectId: Guid,
-            type: VDS_OBJECT_TYPE,
+            @"type": VDS_OBJECT_TYPE,
             ppObjectUnk: ?*?*IUnknown,
         ) callconv(.winapi) HRESULT,
         OnLoad: *const fn(
@@ -2004,7 +2004,7 @@ pub const VDS_LUN_PROP = extern struct {
     pwszIdentification: ?PWSTR,
     pwszUnmaskingList: ?PWSTR,
     ulFlags: u32,
-    type: VDS_LUN_TYPE,
+    @"type": VDS_LUN_TYPE,
     status: VDS_LUN_STATUS,
     health: VDS_HEALTH,
     TransitionState: VDS_TRANSITION_STATE,
@@ -2014,7 +2014,7 @@ pub const VDS_LUN_PROP = extern struct {
 pub const VDS_LUN_PLEX_PROP = extern struct {
     id: Guid,
     ullSize: u64,
-    type: VDS_LUN_PLEX_TYPE,
+    @"type": VDS_LUN_PLEX_TYPE,
     status: VDS_LUN_PLEX_STATUS,
     health: VDS_HEALTH,
     TransitionState: VDS_TRANSITION_STATE,
@@ -2139,7 +2139,7 @@ pub const VDS_STORAGE_POOL_PROP = extern struct {
     id: Guid,
     status: VDS_STORAGE_POOL_STATUS,
     health: VDS_HEALTH,
-    type: VDS_STORAGE_POOL_TYPE,
+    @"type": VDS_STORAGE_POOL_TYPE,
     pwszName: ?PWSTR,
     pwszDescription: ?PWSTR,
     ullTotalConsumedSpace: u64,
@@ -2234,7 +2234,7 @@ pub const IVdsHwProviderStoragePools = extern union {
         ) callconv(.winapi) HRESULT,
         CreateLunInStoragePool: *const fn(
             self: *const IVdsHwProviderStoragePools,
-            type: VDS_LUN_TYPE,
+            @"type": VDS_LUN_TYPE,
             ullSizeInBytes: u64,
             StoragePoolId: Guid,
             pwszUnmaskingList: ?PWSTR,
@@ -2243,7 +2243,7 @@ pub const IVdsHwProviderStoragePools = extern union {
         ) callconv(.winapi) HRESULT,
         QueryMaxLunCreateSizeInStoragePool: *const fn(
             self: *const IVdsHwProviderStoragePools,
-            type: VDS_LUN_TYPE,
+            @"type": VDS_LUN_TYPE,
             StoragePoolId: Guid,
             pHints2: ?*VDS_HINTS2,
             pullMaxLunSize: ?*u64,
@@ -2306,7 +2306,7 @@ pub const IVdsSubSystem = extern union {
         ) callconv(.winapi) HRESULT,
         CreateLun: *const fn(
             self: *const IVdsSubSystem,
-            type: VDS_LUN_TYPE,
+            @"type": VDS_LUN_TYPE,
             ullSizeInBytes: u64,
             pDriveIdArray: ?[*]Guid,
             lNumberOfDrives: i32,
@@ -2325,7 +2325,7 @@ pub const IVdsSubSystem = extern union {
         ) callconv(.winapi) HRESULT,
         QueryMaxLunCreateSize: *const fn(
             self: *const IVdsSubSystem,
-            type: VDS_LUN_TYPE,
+            @"type": VDS_LUN_TYPE,
             pDriveIdArray: ?[*]Guid,
             lNumberOfDrives: i32,
             pHints: ?*VDS_HINTS,
@@ -2391,7 +2391,7 @@ pub const IVdsSubSystem2 = extern union {
         ) callconv(.winapi) HRESULT,
         CreateLun2: *const fn(
             self: *const IVdsSubSystem2,
-            type: VDS_LUN_TYPE,
+            @"type": VDS_LUN_TYPE,
             ullSizeInBytes: u64,
             pDriveIdArray: ?[*]Guid,
             lNumberOfDrives: i32,
@@ -2401,7 +2401,7 @@ pub const IVdsSubSystem2 = extern union {
         ) callconv(.winapi) HRESULT,
         QueryMaxLunCreateSize2: *const fn(
             self: *const IVdsSubSystem2,
-            type: VDS_LUN_TYPE,
+            @"type": VDS_LUN_TYPE,
             pDriveIdArray: ?[*]Guid,
             lNumberOfDrives: i32,
             pHints2: ?*VDS_HINTS2,
@@ -3387,7 +3387,7 @@ pub const IVdsAdmin = extern union {
             providerId: Guid,
             providerClsid: Guid,
             pwszName: ?PWSTR,
-            type: VDS_PROVIDER_TYPE,
+            @"type": VDS_PROVIDER_TYPE,
             pwszMachineName: ?PWSTR,
             pwszVersion: ?PWSTR,
             guidVersionId: Guid,

@@ -4398,7 +4398,7 @@ pub const HDITEMA = extern struct {
     lParam: LPARAM,
     iImage: i32,
     iOrder: i32,
-    type: u32,
+    @"type": u32,
     pvFilter: ?*anyopaque,
     state: u32,
 };
@@ -4413,7 +4413,7 @@ pub const HDITEMW = extern struct {
     lParam: LPARAM,
     iImage: i32,
     iOrder: i32,
-    type: u32,
+    @"type": u32,
     pvFilter: ?*anyopaque,
     state: u32,
 };
@@ -6007,9 +6007,9 @@ pub const IImageList = extern union {
         ) callconv(.winapi) HRESULT,
         Merge: *const fn(
             self: *const IImageList,
-            i1: i32,
+            @"i1": i32,
             punk2: ?*IUnknown,
-            i2: i32,
+            @"i2": i32,
             dx: i32,
             dy: i32,
             riid: ?*const Guid,
@@ -9584,7 +9584,7 @@ pub const USAGE_PROPERTIES = extern struct {
 };
 
 pub const POINTER_TYPE_INFO = extern struct {
-    type: POINTER_INPUT_TYPE,
+    @"type": POINTER_INPUT_TYPE,
     Anonymous: extern union {
         touchInfo: POINTER_TOUCH_INFO,
         penInfo: POINTER_PEN_INFO,
@@ -9994,9 +9994,9 @@ pub extern "comctl32" fn ImageList_GetImageInfo(
 // TODO: this type is limited to platform 'windows6.0.6000'
 pub extern "comctl32" fn ImageList_Merge(
     himl1: ?HIMAGELIST,
-    i1: i32,
+    @"i1": i32,
     himl2: ?HIMAGELIST,
-    i2: i32,
+    @"i2": i32,
     dx: i32,
     dy: i32,
 ) callconv(.winapi) ?HIMAGELIST;

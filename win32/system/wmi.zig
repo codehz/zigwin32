@@ -989,7 +989,7 @@ pub const MI_ParameterDecl = extern struct {
     name: ?*const u16,
     qualifiers: ?*const ?*MI_Qualifier,
     numQualifiers: u32,
-    type: u32,
+    @"type": u32,
     className: ?*const u16,
     subscript: u32,
     offset: u32,
@@ -1001,7 +1001,7 @@ pub const MI_PropertyDecl = extern struct {
     name: ?*const u16,
     qualifiers: ?*const ?*MI_Qualifier,
     numQualifiers: u32,
-    type: u32,
+    @"type": u32,
     className: ?*const u16,
     subscript: u32,
     offset: u32,
@@ -1031,7 +1031,7 @@ pub const MI_MethodDecl = extern struct {
 
 pub const MI_QualifierDecl = extern struct {
     name: ?*const u16,
-    type: u32,
+    @"type": u32,
     scope: u32,
     flavor: u32,
     subscript: u32,
@@ -1040,7 +1040,7 @@ pub const MI_QualifierDecl = extern struct {
 
 pub const MI_Qualifier = extern struct {
     name: ?*const u16,
-    type: u32,
+    @"type": u32,
     flavor: u32,
     value: ?*const anyopaque,
 };

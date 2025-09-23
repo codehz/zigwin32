@@ -13498,7 +13498,7 @@ pub const ISortColumnArray = extern union {
         ) callconv(.winapi) HRESULT,
         GetSortType: *const fn(
             self: *const ISortColumnArray,
-            type: ?*SORT_ORDER_TYPE,
+            @"type": ?*SORT_ORDER_TYPE,
         ) callconv(.winapi) HRESULT,
     };
     vtable: *const VTable,
@@ -20019,7 +20019,7 @@ pub const DROPIMAGE_WARNING = DROPIMAGETYPE.WARNING;
 pub const DROPIMAGE_NOIMAGE = DROPIMAGETYPE.NOIMAGE;
 
 pub const DROPDESCRIPTION = extern struct {
-    type: DROPIMAGETYPE align(1),
+    @"type": DROPIMAGETYPE align(1),
     szMessage: [260]u16 align(1),
     szInsert: [260]u16 align(1),
 };

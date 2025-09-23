@@ -574,7 +574,7 @@ pub const WSMAN_DATA_TYPE_BINARY = WSManDataType.TYPE_BINARY;
 pub const WSMAN_DATA_TYPE_DWORD = WSManDataType.TYPE_DWORD;
 
 pub const WSMAN_DATA = extern struct {
-    type: WSManDataType,
+    @"type": WSManDataType,
     Anonymous: extern union {
         text: WSMAN_DATA_TEXT,
         binaryData: WSMAN_DATA_BINARY,
@@ -1887,7 +1887,7 @@ pub extern "wsmsvc" fn WSManCreateShell(
     startupInfo: ?*WSMAN_SHELL_STARTUP_INFO_V11,
     options: ?*WSMAN_OPTION_SET,
     createXml: ?*WSMAN_DATA,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     shell: ?*?*WSMAN_SHELL,
 ) callconv(.winapi) void;
 
@@ -1898,7 +1898,7 @@ pub extern "wsmsvc" fn WSManRunShellCommand(
     commandLine: ?[*:0]const u16,
     args: ?*WSMAN_COMMAND_ARG_SET,
     options: ?*WSMAN_OPTION_SET,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     command: ?*?*WSMAN_COMMAND,
 ) callconv(.winapi) void;
 
@@ -1908,7 +1908,7 @@ pub extern "wsmsvc" fn WSManSignalShell(
     command: ?*WSMAN_COMMAND,
     flags: u32,
     code: ?[*:0]const u16,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     signalOperation: ?*?*WSMAN_OPERATION,
 ) callconv(.winapi) void;
 
@@ -1918,7 +1918,7 @@ pub extern "wsmsvc" fn WSManReceiveShellOutput(
     command: ?*WSMAN_COMMAND,
     flags: u32,
     desiredStreamSet: ?*WSMAN_STREAM_ID_SET,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     receiveOperation: ?*?*WSMAN_OPERATION,
 ) callconv(.winapi) void;
 
@@ -1930,7 +1930,7 @@ pub extern "wsmsvc" fn WSManSendShellInput(
     streamId: ?[*:0]const u16,
     streamData: ?*WSMAN_DATA,
     endOfStream: BOOL,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     sendOperation: ?*?*WSMAN_OPERATION,
 ) callconv(.winapi) void;
 
@@ -1938,14 +1938,14 @@ pub extern "wsmsvc" fn WSManSendShellInput(
 pub extern "wsmsvc" fn WSManCloseCommand(
     commandHandle: ?*WSMAN_COMMAND,
     flags: u32,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
 ) callconv(.winapi) void;
 
 // TODO: this type is limited to platform 'windows6.1'
 pub extern "wsmsvc" fn WSManCloseShell(
     shellHandle: ?*WSMAN_SHELL,
     flags: u32,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
 ) callconv(.winapi) void;
 
 // TODO: this type is limited to platform 'windows8.0'
@@ -1957,7 +1957,7 @@ pub extern "wsmsvc" fn WSManCreateShellEx(
     startupInfo: ?*WSMAN_SHELL_STARTUP_INFO_V11,
     options: ?*WSMAN_OPTION_SET,
     createXml: ?*WSMAN_DATA,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     shell: ?*?*WSMAN_SHELL,
 ) callconv(.winapi) void;
 
@@ -1969,7 +1969,7 @@ pub extern "wsmsvc" fn WSManRunShellCommandEx(
     commandLine: ?[*:0]const u16,
     args: ?*WSMAN_COMMAND_ARG_SET,
     options: ?*WSMAN_OPTION_SET,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     command: ?*?*WSMAN_COMMAND,
 ) callconv(.winapi) void;
 
@@ -1978,21 +1978,21 @@ pub extern "wsmsvc" fn WSManDisconnectShell(
     shell: ?*WSMAN_SHELL,
     flags: u32,
     disconnectInfo: ?*WSMAN_SHELL_DISCONNECT_INFO,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
 ) callconv(.winapi) void;
 
 // TODO: this type is limited to platform 'windows8.0'
 pub extern "wsmsvc" fn WSManReconnectShell(
     shell: ?*WSMAN_SHELL,
     flags: u32,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
 ) callconv(.winapi) void;
 
 // TODO: this type is limited to platform 'windows8.0'
 pub extern "wsmsvc" fn WSManReconnectShellCommand(
     commandHandle: ?*WSMAN_COMMAND,
     flags: u32,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
 ) callconv(.winapi) void;
 
 // TODO: this type is limited to platform 'windows8.0'
@@ -2003,7 +2003,7 @@ pub extern "wsmsvc" fn WSManConnectShell(
     shellID: ?[*:0]const u16,
     options: ?*WSMAN_OPTION_SET,
     connectXml: ?*WSMAN_DATA,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     shell: ?*?*WSMAN_SHELL,
 ) callconv(.winapi) void;
 
@@ -2014,7 +2014,7 @@ pub extern "wsmsvc" fn WSManConnectShellCommand(
     commandID: ?[*:0]const u16,
     options: ?*WSMAN_OPTION_SET,
     connectXml: ?*WSMAN_DATA,
-    @"async": ?*WSMAN_SHELL_ASYNC,
+    async: ?*WSMAN_SHELL_ASYNC,
     command: ?*?*WSMAN_COMMAND,
 ) callconv(.winapi) void;
 

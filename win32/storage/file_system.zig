@@ -6793,7 +6793,7 @@ pub extern "netapi32" fn NetShareDelSticky(
 pub extern "netapi32" fn NetShareCheck(
     servername: ?PWSTR,
     device: ?PWSTR,
-    type: ?*u32,
+    @"type": ?*u32,
 ) callconv(.winapi) u32;
 
 // TODO: this type is limited to platform 'windows5.1.2600'

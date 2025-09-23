@@ -883,7 +883,7 @@ pub const RPC_BINDING_HANDLE_TEMPLATE_V1_W = extern struct {
     ProtocolSequence: u32,
     NetworkAddress: ?*u16,
     StringEndpoint: ?*u16,
-    u1: extern union {
+    @"u1": extern union {
         Reserved: ?*u16,
     },
     ObjectUuid: Guid,
@@ -895,7 +895,7 @@ pub const RPC_BINDING_HANDLE_TEMPLATE_V1_A = extern struct {
     ProtocolSequence: u32,
     NetworkAddress: ?*u8,
     StringEndpoint: ?*u8,
-    u1: extern union {
+    @"u1": extern union {
         Reserved: ?*u8,
     },
     ObjectUuid: Guid,

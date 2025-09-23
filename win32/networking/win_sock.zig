@@ -2289,14 +2289,14 @@ pub const in6_pktinfo_ex = extern struct {
 pub const IN_RECVERR = extern struct {
     protocol: IPPROTO,
     info: u32,
-    type: u8,
+    @"type": u8,
     code: u8,
 };
 
 pub const ICMP_ERROR_INFO = extern struct {
     srcaddress: SOCKADDR_INET,
     protocol: IPPROTO,
-    type: u8,
+    @"type": u8,
     code: u8,
 };
 
@@ -3451,7 +3451,7 @@ pub const NLA_INTERNET_YES = NLA_INTERNET.YES;
 
 pub const NLA_BLOB = extern struct {
     header: extern struct {
-        type: NLA_BLOB_DATA_TYPE,
+        @"type": NLA_BLOB_DATA_TYPE,
         dwSize: u32,
         nextOffset: u32,
     },
@@ -3466,13 +3466,13 @@ pub const NLA_BLOB = extern struct {
             information: [1]CHAR,
         },
         connectivity: extern struct {
-            type: NLA_CONNECTIVITY_TYPE,
+            @"type": NLA_CONNECTIVITY_TYPE,
             internet: NLA_INTERNET,
         },
         ICS: extern struct {
             remote: extern struct {
                 speed: u32,
-                type: u32,
+                @"type": u32,
                 state: u32,
                 machineName: [256]u16,
                 sharedAdapterName: [256]u16,
@@ -3919,7 +3919,7 @@ pub const LPWSPSHUTDOWN = *const fn(
 
 pub const LPWSPSOCKET = *const fn(
     af: i32,
-    type: i32,
+    @"type": i32,
     protocol: i32,
     lpProtocolInfo: ?*WSAPROTOCOL_INFOW,
     g: u32,
@@ -5421,7 +5421,7 @@ pub extern "ws2_32" fn shutdown(
 // TODO: this type is limited to platform 'windows8.1'
 pub extern "ws2_32" fn socket(
     af: i32,
-    type: i32,
+    @"type": i32,
     protocol: i32,
 ) callconv(.winapi) SOCKET;
 
@@ -5430,7 +5430,7 @@ pub extern "ws2_32" fn gethostbyaddr(
     // TODO: what to do with BytesParamIndex 1?
     addr: ?[*:0]const u8,
     len: i32,
-    type: i32,
+    @"type": i32,
 ) callconv(.winapi) ?*hostent;
 
 // TODO: this type is limited to platform 'windows8.1'
@@ -5564,7 +5564,7 @@ pub extern "ws2_32" fn WSAAsyncGetHostByAddr(
     // TODO: what to do with BytesParamIndex 3?
     addr: ?[*:0]const u8,
     len: i32,
-    type: i32,
+    @"type": i32,
     // TODO: what to do with BytesParamIndex 6?
     buf: ?PSTR,
     buflen: i32,
@@ -5859,7 +5859,7 @@ pub extern "ws2_32" fn WSASetEvent(
 // TODO: this type is limited to platform 'windows8.1'
 pub extern "ws2_32" fn WSASocketA(
     af: i32,
-    type: i32,
+    @"type": i32,
     protocol: i32,
     lpProtocolInfo: ?*WSAPROTOCOL_INFOA,
     g: u32,
@@ -5869,7 +5869,7 @@ pub extern "ws2_32" fn WSASocketA(
 // TODO: this type is limited to platform 'windows8.1'
 pub extern "ws2_32" fn WSASocketW(
     af: i32,
-    type: i32,
+    @"type": i32,
     protocol: i32,
     lpProtocolInfo: ?*WSAPROTOCOL_INFOW,
     g: u32,

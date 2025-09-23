@@ -1047,7 +1047,7 @@ pub const HARDWAREINPUT = extern struct {
 };
 
 pub const INPUT = extern struct {
-    type: INPUT_TYPE,
+    @"type": INPUT_TYPE,
     Anonymous: extern union {
         mi: MOUSEINPUT,
         ki: KEYBDINPUT,

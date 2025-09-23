@@ -2001,7 +2001,7 @@ pub const IComponentData = extern union {
         QueryDataObject: *const fn(
             self: *const IComponentData,
             cookie: isize,
-            type: DATA_OBJECT_TYPES,
+            @"type": DATA_OBJECT_TYPES,
             ppDataObject: ?*?*IDataObject,
         ) callconv(.winapi) HRESULT,
         GetDisplayInfo: *const fn(
@@ -2063,7 +2063,7 @@ pub const IComponent = extern union {
         QueryDataObject: *const fn(
             self: *const IComponent,
             cookie: isize,
-            type: DATA_OBJECT_TYPES,
+            @"type": DATA_OBJECT_TYPES,
             ppDataObject: ?*?*IDataObject,
         ) callconv(.winapi) HRESULT,
         GetResultViewType: *const fn(
@@ -2750,7 +2750,7 @@ pub const IPropertySheetProvider = extern union {
         CreatePropertySheet: *const fn(
             self: *const IPropertySheetProvider,
             title: ?[*:0]const u16,
-            type: u8,
+            @"type": u8,
             cookie: isize,
             pIDataObjectm: ?*IDataObject,
             dwOptions: u32,
@@ -3694,7 +3694,7 @@ pub const IComponentData2 = extern union {
         QueryDispatch: *const fn(
             self: *const IComponentData2,
             cookie: isize,
-            type: DATA_OBJECT_TYPES,
+            @"type": DATA_OBJECT_TYPES,
             ppDispatch: ?*?*IDispatch,
         ) callconv(.winapi) HRESULT,
     };
@@ -3715,7 +3715,7 @@ pub const IComponent2 = extern union {
         QueryDispatch: *const fn(
             self: *const IComponent2,
             cookie: isize,
-            type: DATA_OBJECT_TYPES,
+            @"type": DATA_OBJECT_TYPES,
             ppDispatch: ?*?*IDispatch,
         ) callconv(.winapi) HRESULT,
         GetResultViewType2: *const fn(

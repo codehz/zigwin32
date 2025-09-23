@@ -195,7 +195,7 @@ pub const IDirectManipulationManager = extern union {
             self: *const IDirectManipulationManager,
             window: ?HWND,
             hitTestWindow: ?HWND,
-            type: DIRECTMANIPULATION_HITTEST_TYPE,
+            @"type": DIRECTMANIPULATION_HITTEST_TYPE,
         ) callconv(.winapi) HRESULT,
         ProcessInput: *const fn(
             self: *const IDirectManipulationManager,
@@ -667,7 +667,7 @@ pub const IDirectManipulationPrimaryContent = extern union {
         SetSnapType: *const fn(
             self: *const IDirectManipulationPrimaryContent,
             motion: DIRECTMANIPULATION_MOTION_TYPES,
-            type: DIRECTMANIPULATION_SNAPPOINT_TYPE,
+            @"type": DIRECTMANIPULATION_SNAPPOINT_TYPE,
         ) callconv(.winapi) HRESULT,
         SetSnapCoordinate: *const fn(
             self: *const IDirectManipulationPrimaryContent,

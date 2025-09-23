@@ -1577,7 +1577,7 @@ pub const ISessionStateChangeTrigger = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         put_StateChange: *const fn(
             self: *const ISessionStateChangeTrigger,
-            type: TASK_SESSION_STATE_CHANGE_TYPE,
+            @"type": TASK_SESSION_STATE_CHANGE_TYPE,
         ) callconv(.winapi) HRESULT,
     };
     vtable: *const VTable,
@@ -2440,7 +2440,7 @@ pub const ITriggerCollection = extern union {
         ) callconv(.winapi) HRESULT,
         Create: *const fn(
             self: *const ITriggerCollection,
-            type: TASK_TRIGGER_TYPE2,
+            @"type": TASK_TRIGGER_TYPE2,
             ppTrigger: ?*?*ITrigger,
         ) callconv(.winapi) HRESULT,
         Remove: *const fn(
@@ -2507,7 +2507,7 @@ pub const IActionCollection = extern union {
         ) callconv(.winapi) HRESULT,
         Create: *const fn(
             self: *const IActionCollection,
-            type: TASK_ACTION_TYPE,
+            @"type": TASK_ACTION_TYPE,
             ppAction: ?*?*IAction,
         ) callconv(.winapi) HRESULT,
         Remove: *const fn(

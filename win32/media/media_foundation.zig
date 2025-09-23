@@ -17620,8 +17620,8 @@ pub const MFTOPONODE_ATTRIBUTE_UPDATE = extern struct {
     guidAttributeKey: Guid,
     attrType: MF_ATTRIBUTE_TYPE,
     Anonymous: extern union {
-        u32: u32,
-        u64: u64,
+        @"u32": u32,
+        @"u64": u64,
         d: f64,
     },
 };
@@ -22992,7 +22992,7 @@ pub const IMFMediaEngine = extern union {
         ) callconv(.winapi) HRESULT,
         CanPlayType: *const fn(
             self: *const IMFMediaEngine,
-            type: ?BSTR,
+            @"type": ?BSTR,
             pAnswer: ?*MF_MEDIA_ENGINE_CANPLAY,
         ) callconv(.winapi) HRESULT,
         GetReadyState: *const fn(
@@ -23597,7 +23597,7 @@ pub const IMFMediaEngineExtension = extern union {
             self: *const IMFMediaEngineExtension,
             bstrURL: ?BSTR,
             pByteStream: ?*IMFByteStream,
-            type: MF_OBJECT_TYPE,
+            @"type": MF_OBJECT_TYPE,
             ppIUnknownCancelCookie: ?*?*IUnknown,
             pCallback: ?*IMFAsyncCallback,
             punkState: ?*IUnknown,
@@ -24047,7 +24047,7 @@ pub const IMFMediaSourceExtension = extern union {
         ) callconv(.winapi) HRESULT,
         AddSourceBuffer: *const fn(
             self: *const IMFMediaSourceExtension,
-            type: ?BSTR,
+            @"type": ?BSTR,
             pNotify: ?*IMFSourceBufferNotify,
             ppSourceBuffer: ?*?*IMFSourceBuffer,
         ) callconv(.winapi) HRESULT,
@@ -24061,7 +24061,7 @@ pub const IMFMediaSourceExtension = extern union {
         ) callconv(.winapi) HRESULT,
         IsTypeSupported: *const fn(
             self: *const IMFMediaSourceExtension,
-            type: ?BSTR,
+            @"type": ?BSTR,
         ) callconv(.winapi) BOOL,
         GetSourceBuffer: *const fn(
             self: *const IMFMediaSourceExtension,
@@ -24518,7 +24518,7 @@ pub const IMFMediaEngineClassFactoryEx = extern union {
         ) callconv(.winapi) HRESULT,
         IsTypeSupported: *const fn(
             self: *const IMFMediaEngineClassFactoryEx,
-            type: ?BSTR,
+            @"type": ?BSTR,
             keySystem: ?BSTR,
             isSupported: ?*BOOL,
         ) callconv(.winapi) HRESULT,
@@ -24565,7 +24565,7 @@ pub const IMFExtendedDRMTypeSupport = extern union {
         base: IUnknown.VTable,
         IsTypeSupportedEx: *const fn(
             self: *const IMFExtendedDRMTypeSupport,
-            type: ?BSTR,
+            @"type": ?BSTR,
             keySystem: ?BSTR,
             pAnswer: ?*MF_MEDIA_ENGINE_CANPLAY,
         ) callconv(.winapi) HRESULT,
@@ -28064,7 +28064,7 @@ pub const IMFSpatialAudioObjectBuffer = extern union {
         ) callconv(.winapi) HRESULT,
         SetType: *const fn(
             self: *const IMFSpatialAudioObjectBuffer,
-            type: AudioObjectType,
+            @"type": AudioObjectType,
         ) callconv(.winapi) HRESULT,
         GetType: *const fn(
             self: *const IMFSpatialAudioObjectBuffer,
@@ -29994,7 +29994,7 @@ pub extern "mfplat" fn MFGetUncompressedVideoFormat(
 // TODO: this type is limited to platform 'windows6.0.6000'
 pub extern "mfplat" fn MFInitVideoFormat(
     pVideoFormat: ?*MFVIDEOFORMAT,
-    type: MFStandardVideoFormat,
+    @"type": MFStandardVideoFormat,
 ) callconv(.winapi) HRESULT;
 
 // TODO: this type is limited to platform 'windows6.0.6000'
@@ -30195,7 +30195,7 @@ pub extern "mf" fn MFCreateEncryptedMediaExtensionsStoreActivate(
 ) callconv(.winapi) HRESULT;
 
 pub extern "mfsensorgroup" fn MFCreateVirtualCamera(
-    type: MFVirtualCameraType,
+    @"type": MFVirtualCameraType,
     lifetime: MFVirtualCameraLifetime,
     access: MFVirtualCameraAccess,
     friendlyName: ?[*:0]const u16,
@@ -30206,7 +30206,7 @@ pub extern "mfsensorgroup" fn MFCreateVirtualCamera(
 ) callconv(.winapi) HRESULT;
 
 pub extern "mfsensorgroup" fn MFIsVirtualCameraTypeSupported(
-    type: MFVirtualCameraType,
+    @"type": MFVirtualCameraType,
     supported: ?*BOOL,
 ) callconv(.winapi) HRESULT;
 

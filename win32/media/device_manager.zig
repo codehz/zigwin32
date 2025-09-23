@@ -1492,13 +1492,13 @@ pub const IWMDMDeviceSession = extern union {
         base: IUnknown.VTable,
         BeginSession: *const fn(
             self: *const IWMDMDeviceSession,
-            type: WMDM_SESSION_TYPE,
+            @"type": WMDM_SESSION_TYPE,
             pCtx: ?[*:0]u8,
             dwSizeCtx: u32,
         ) callconv(.winapi) HRESULT,
         EndSession: *const fn(
             self: *const IWMDMDeviceSession,
-            type: WMDM_SESSION_TYPE,
+            @"type": WMDM_SESSION_TYPE,
             pCtx: ?[*:0]u8,
             dwSizeCtx: u32,
         ) callconv(.winapi) HRESULT,

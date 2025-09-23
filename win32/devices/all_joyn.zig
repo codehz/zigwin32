@@ -2210,7 +2210,7 @@ pub extern "msajapi" fn alljoyn_abouticon_getcontent(
 
 pub extern "msajapi" fn alljoyn_abouticon_setcontent(
     icon: ?*_alljoyn_abouticon_handle,
-    type: ?[*:0]const u8,
+    @"type": ?[*:0]const u8,
     data: ?*u8,
     csize: usize,
     ownsData: u8,
@@ -2218,13 +2218,13 @@ pub extern "msajapi" fn alljoyn_abouticon_setcontent(
 
 pub extern "msajapi" fn alljoyn_abouticon_geturl(
     icon: ?*_alljoyn_abouticon_handle,
-    type: ?*const ?*i8,
+    @"type": ?*const ?*i8,
     url: ?*const ?*i8,
 ) callconv(.winapi) void;
 
 pub extern "msajapi" fn alljoyn_abouticon_seturl(
     icon: ?*_alljoyn_abouticon_handle,
-    type: ?[*:0]const u8,
+    @"type": ?[*:0]const u8,
     url: ?[*:0]const u8,
 ) callconv(.winapi) QStatus;
 
@@ -2850,7 +2850,7 @@ pub extern "msajapi" fn alljoyn_interfacedescription_getmember(
 
 pub extern "msajapi" fn alljoyn_interfacedescription_addmember(
     iface: alljoyn_interfacedescription,
-    type: alljoyn_messagetype,
+    @"type": alljoyn_messagetype,
     name: ?[*:0]const u8,
     inputSig: ?[*:0]const u8,
     outSig: ?[*:0]const u8,

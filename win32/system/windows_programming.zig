@@ -623,7 +623,7 @@ pub const FEATURE_STATE_CHANGE_SUBSCRIPTION = isize;
 pub const FH_SERVICE_PIPE_HANDLE = isize;
 
 pub const IMAGE_THUNK_DATA64 = extern struct {
-    u1: extern union {
+    @"u1": extern union {
         ForwarderString: u64,
         Function: u64,
         Ordinal: u64,
@@ -632,7 +632,7 @@ pub const IMAGE_THUNK_DATA64 = extern struct {
 };
 
 pub const IMAGE_THUNK_DATA32 = extern struct {
-    u1: extern union {
+    @"u1": extern union {
         ForwarderString: u32,
         Function: u32,
         Ordinal: u32,

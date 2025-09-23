@@ -2330,14 +2330,14 @@ pub const UIAutomationType_OutRectArray = UIAutomationType.OutRectArray;
 pub const UIAutomationType_OutElementArray = UIAutomationType.OutElementArray;
 
 pub const UIAutomationParameter = extern struct {
-    type: UIAutomationType,
+    @"type": UIAutomationType,
     pData: ?*anyopaque,
 };
 
 pub const UIAutomationPropertyInfo = extern struct {
     guid: Guid,
     pProgrammaticName: ?[*:0]const u16,
-    type: UIAutomationType,
+    @"type": UIAutomationType,
 };
 
 pub const UIAutomationEventInfo = extern struct {
@@ -4319,7 +4319,7 @@ pub const IUIAutomationPatternInstance = extern union {
             self: *const IUIAutomationPatternInstance,
             index: u32,
             cached: BOOL,
-            type: UIAutomationType,
+            @"type": UIAutomationType,
             pPtr: ?*anyopaque,
         ) callconv(.winapi) HRESULT,
         CallMethod: *const fn(
@@ -9967,7 +9967,7 @@ pub extern "uiautomationcore" fn UiaRegisterProviderCallback(
 
 // TODO: this type is limited to platform 'windows5.1.2600'
 pub extern "uiautomationcore" fn UiaLookupId(
-    type: AutomationIdentifierType,
+    @"type": AutomationIdentifierType,
     pGuid: ?*const Guid,
 ) callconv(.winapi) i32;
 

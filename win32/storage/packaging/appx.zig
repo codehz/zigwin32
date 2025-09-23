@@ -315,7 +315,7 @@ pub const IAppxPackageReader = extern union {
         ) callconv(.winapi) HRESULT,
         GetFootprintFile: *const fn(
             self: *const IAppxPackageReader,
-            type: APPX_FOOTPRINT_FILE_TYPE,
+            @"type": APPX_FOOTPRINT_FILE_TYPE,
             file: ?*?*IAppxFile,
         ) callconv(.winapi) HRESULT,
         GetPayloadFile: *const fn(

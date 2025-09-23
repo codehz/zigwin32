@@ -869,14 +869,14 @@ pub const PFNGLDRAWARRAYSEXTPROC = *const fn(
 
 pub const PFNGLVERTEXPOINTEREXTPROC = *const fn(
     size: i32,
-    type: u32,
+    @"type": u32,
     stride: i32,
     count: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
 
 pub const PFNGLNORMALPOINTEREXTPROC = *const fn(
-    type: u32,
+    @"type": u32,
     stride: i32,
     count: i32,
     pointer: ?*const anyopaque,
@@ -884,14 +884,14 @@ pub const PFNGLNORMALPOINTEREXTPROC = *const fn(
 
 pub const PFNGLCOLORPOINTEREXTPROC = *const fn(
     size: i32,
-    type: u32,
+    @"type": u32,
     stride: i32,
     count: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
 
 pub const PFNGLINDEXPOINTEREXTPROC = *const fn(
-    type: u32,
+    @"type": u32,
     stride: i32,
     count: i32,
     pointer: ?*const anyopaque,
@@ -899,7 +899,7 @@ pub const PFNGLINDEXPOINTEREXTPROC = *const fn(
 
 pub const PFNGLTEXCOORDPOINTEREXTPROC = *const fn(
     size: i32,
-    type: u32,
+    @"type": u32,
     stride: i32,
     count: i32,
     pointer: ?*const anyopaque,
@@ -927,7 +927,7 @@ pub const PFNGLDRAWRANGEELEMENTSWINPROC = *const fn(
     start: u32,
     end: u32,
     count: i32,
-    type: u32,
+    @"type": u32,
     indices: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -943,7 +943,7 @@ pub const PFNGLCOLORTABLEEXTPROC = *const fn(
     internalFormat: u32,
     width: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     data: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -952,14 +952,14 @@ pub const PFNGLCOLORSUBTABLEEXTPROC = *const fn(
     start: i32,
     count: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     data: ?*const anyopaque,
 ) callconv(.winapi) void;
 
 pub const PFNGLGETCOLORTABLEEXTPROC = *const fn(
     target: u32,
     format: u32,
-    type: u32,
+    @"type": u32,
     data: ?*anyopaque,
 ) callconv(.winapi) void;
 
@@ -1275,7 +1275,7 @@ pub extern "opengl32" fn glCallList(
 
 pub extern "opengl32" fn glCallLists(
     n: i32,
-    type: u32,
+    @"type": u32,
     lists: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -1496,7 +1496,7 @@ pub extern "opengl32" fn glColorMaterial(
 
 pub extern "opengl32" fn glColorPointer(
     size: i32,
-    type: u32,
+    @"type": u32,
     stride: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
@@ -1506,7 +1506,7 @@ pub extern "opengl32" fn glCopyPixels(
     y: i32,
     width: i32,
     height: i32,
-    type: u32,
+    @"type": u32,
 ) callconv(.winapi) void;
 
 pub extern "opengl32" fn glCopyTexImage1D(
@@ -1598,7 +1598,7 @@ pub extern "opengl32" fn glDrawBuffer(
 pub extern "opengl32" fn glDrawElements(
     mode: u32,
     count: i32,
-    type: u32,
+    @"type": u32,
     indices: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -1606,7 +1606,7 @@ pub extern "opengl32" fn glDrawPixels(
     width: i32,
     height: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -1673,14 +1673,14 @@ pub extern "opengl32" fn glEvalCoord2fv(
 
 pub extern "opengl32" fn glEvalMesh1(
     mode: u32,
-    i1: i32,
-    i2: i32,
+    @"i1": i32,
+    @"i2": i32,
 ) callconv(.winapi) void;
 
 pub extern "opengl32" fn glEvalMesh2(
     mode: u32,
-    i1: i32,
-    i2: i32,
+    @"i1": i32,
+    @"i2": i32,
     j1: i32,
     j2: i32,
 ) callconv(.winapi) void;
@@ -1696,7 +1696,7 @@ pub extern "opengl32" fn glEvalPoint2(
 
 pub extern "opengl32" fn glFeedbackBuffer(
     size: i32,
-    type: u32,
+    @"type": u32,
     buffer: ?*f32,
 ) callconv(.winapi) void;
 
@@ -1880,7 +1880,7 @@ pub extern "opengl32" fn glGetTexImage(
     target: u32,
     level: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*anyopaque,
 ) callconv(.winapi) void;
 
@@ -1920,7 +1920,7 @@ pub extern "opengl32" fn glIndexMask(
 ) callconv(.winapi) void;
 
 pub extern "opengl32" fn glIndexPointer(
-    type: u32,
+    @"type": u32,
     stride: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
@@ -2064,8 +2064,8 @@ pub extern "opengl32" fn glLogicOp(
 
 pub extern "opengl32" fn glMap1d(
     target: u32,
-    u1: f64,
-    u2: f64,
+    @"u1": f64,
+    @"u2": f64,
     stride: i32,
     order: i32,
     points: ?*const f64,
@@ -2073,8 +2073,8 @@ pub extern "opengl32" fn glMap1d(
 
 pub extern "opengl32" fn glMap1f(
     target: u32,
-    u1: f32,
-    u2: f32,
+    @"u1": f32,
+    @"u2": f32,
     stride: i32,
     order: i32,
     points: ?*const f32,
@@ -2082,8 +2082,8 @@ pub extern "opengl32" fn glMap1f(
 
 pub extern "opengl32" fn glMap2d(
     target: u32,
-    u1: f64,
-    u2: f64,
+    @"u1": f64,
+    @"u2": f64,
     ustride: i32,
     uorder: i32,
     v1: f64,
@@ -2095,8 +2095,8 @@ pub extern "opengl32" fn glMap2d(
 
 pub extern "opengl32" fn glMap2f(
     target: u32,
-    u1: f32,
-    u2: f32,
+    @"u1": f32,
+    @"u2": f32,
     ustride: i32,
     uorder: i32,
     v1: f32,
@@ -2108,20 +2108,20 @@ pub extern "opengl32" fn glMap2f(
 
 pub extern "opengl32" fn glMapGrid1d(
     un: i32,
-    u1: f64,
-    u2: f64,
+    @"u1": f64,
+    @"u2": f64,
 ) callconv(.winapi) void;
 
 pub extern "opengl32" fn glMapGrid1f(
     un: i32,
-    u1: f32,
-    u2: f32,
+    @"u1": f32,
+    @"u2": f32,
 ) callconv(.winapi) void;
 
 pub extern "opengl32" fn glMapGrid2d(
     un: i32,
-    u1: f64,
-    u2: f64,
+    @"u1": f64,
+    @"u2": f64,
     vn: i32,
     v1: f64,
     v2: f64,
@@ -2129,8 +2129,8 @@ pub extern "opengl32" fn glMapGrid2d(
 
 pub extern "opengl32" fn glMapGrid2f(
     un: i32,
-    u1: f32,
-    u2: f32,
+    @"u1": f32,
+    @"u2": f32,
     vn: i32,
     v1: f32,
     v2: f32,
@@ -2228,7 +2228,7 @@ pub extern "opengl32" fn glNormal3sv(
 ) callconv(.winapi) void;
 
 pub extern "opengl32" fn glNormalPointer(
-    type: u32,
+    @"type": u32,
     stride: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
@@ -2470,7 +2470,7 @@ pub extern "opengl32" fn glReadPixels(
     width: i32,
     height: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*anyopaque,
 ) callconv(.winapi) void;
 
@@ -2738,7 +2738,7 @@ pub extern "opengl32" fn glTexCoord4sv(
 
 pub extern "opengl32" fn glTexCoordPointer(
     size: i32,
-    type: u32,
+    @"type": u32,
     stride: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
@@ -2810,7 +2810,7 @@ pub extern "opengl32" fn glTexImage1D(
     width: i32,
     border: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -2822,7 +2822,7 @@ pub extern "opengl32" fn glTexImage2D(
     height: i32,
     border: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -2856,7 +2856,7 @@ pub extern "opengl32" fn glTexSubImage1D(
     xoffset: i32,
     width: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -2868,7 +2868,7 @@ pub extern "opengl32" fn glTexSubImage2D(
     width: i32,
     height: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     pixels: ?*const anyopaque,
 ) callconv(.winapi) void;
 
@@ -3006,7 +3006,7 @@ pub extern "opengl32" fn glVertex4sv(
 
 pub extern "opengl32" fn glVertexPointer(
     size: i32,
-    type: u32,
+    @"type": u32,
     stride: i32,
     pointer: ?*const anyopaque,
 ) callconv(.winapi) void;
@@ -3105,7 +3105,7 @@ pub extern "glu32" fn gluBuild1DMipmaps(
     components: i32,
     width: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     data: ?*const anyopaque,
 ) callconv(.winapi) i32;
 
@@ -3115,7 +3115,7 @@ pub extern "glu32" fn gluBuild2DMipmaps(
     width: i32,
     height: i32,
     format: u32,
-    type: u32,
+    @"type": u32,
     data: ?*const anyopaque,
 ) callconv(.winapi) i32;
 
@@ -3277,7 +3277,7 @@ pub extern "glu32" fn gluPwlCurve(
     count: i32,
     array: ?*f32,
     stride: i32,
-    type: u32,
+    @"type": u32,
 ) callconv(.winapi) void;
 
 pub extern "glu32" fn gluNurbsCurve(
@@ -3287,7 +3287,7 @@ pub extern "glu32" fn gluNurbsCurve(
     stride: i32,
     ctlarray: ?*f32,
     order: i32,
-    type: u32,
+    @"type": u32,
 ) callconv(.winapi) void;
 
 pub extern "glu32" fn gluNurbsSurface(
@@ -3301,7 +3301,7 @@ pub extern "glu32" fn gluNurbsSurface(
     ctlarray: ?*f32,
     sorder: i32,
     torder: i32,
-    type: u32,
+    @"type": u32,
 ) callconv(.winapi) void;
 
 pub extern "glu32" fn gluLoadSamplingMatrices(
@@ -3335,7 +3335,7 @@ pub extern "glu32" fn gluBeginPolygon(
 
 pub extern "glu32" fn gluNextContour(
     tess: ?*GLUtesselator,
-    type: u32,
+    @"type": u32,
 ) callconv(.winapi) void;
 
 pub extern "glu32" fn gluEndPolygon(

@@ -2122,7 +2122,7 @@ pub const INetFwService = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_Type: *const fn(
             self: *const INetFwService,
-            type: ?*NET_FW_SERVICE_TYPE,
+            @"type": ?*NET_FW_SERVICE_TYPE,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_Customized: *const fn(
@@ -2947,7 +2947,7 @@ pub const INetFwProfile = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_Type: *const fn(
             self: *const INetFwProfile,
-            type: ?*NET_FW_PROFILE_TYPE,
+            @"type": ?*NET_FW_PROFILE_TYPE,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_FirewallEnabled: *const fn(
@@ -3311,7 +3311,7 @@ pub const INetFwMgr = extern union {
             self: *const INetFwMgr,
             ipVersion: NET_FW_IP_VERSION,
             localAddress: ?BSTR,
-            type: u8,
+            @"type": u8,
             allowed: ?*VARIANT,
             restricted: ?*VARIANT,
         ) callconv(.winapi) HRESULT,

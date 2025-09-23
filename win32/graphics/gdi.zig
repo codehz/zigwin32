@@ -4954,7 +4954,7 @@ pub extern "gdi32" fn ExtFloodFill(
     x: i32,
     y: i32,
     color: u32,
-    type: EXT_FLOOD_FILL_TYPE,
+    @"type": EXT_FLOOD_FILL_TYPE,
 ) callconv(.winapi) BOOL;
 
 // TODO: this type is limited to platform 'windows5.0'
@@ -5140,7 +5140,7 @@ pub extern "gdi32" fn GetMetaRgn(
 // TODO: this type is limited to platform 'windows5.0'
 pub extern "gdi32" fn GetCurrentObject(
     hdc: ?HDC,
-    type: OBJ_TYPE,
+    @"type": OBJ_TYPE,
 ) callconv(.winapi) ?HGDIOBJ;
 
 // TODO: this type is limited to platform 'windows5.0'

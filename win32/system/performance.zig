@@ -1367,7 +1367,7 @@ pub const IDataCollector = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_DataCollectorType: *const fn(
             self: *const IDataCollector,
-            type: ?*DataCollectorType,
+            @"type": ?*DataCollectorType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_FileName: *const fn(
@@ -3001,12 +3001,12 @@ pub const IValueMapItem = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_ValueMapType: *const fn(
             self: *const IValueMapItem,
-            type: ?*ValueMapType,
+            @"type": ?*ValueMapType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         put_ValueMapType: *const fn(
             self: *const IValueMapItem,
-            type: ValueMapType,
+            @"type": ValueMapType,
         ) callconv(.winapi) HRESULT,
     };
     vtable: *const VTable,
@@ -3088,12 +3088,12 @@ pub const IValueMap = extern union {
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         get_ValueMapType: *const fn(
             self: *const IValueMap,
-            type: ?*ValueMapType,
+            @"type": ?*ValueMapType,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
         put_ValueMapType: *const fn(
             self: *const IValueMap,
-            type: ValueMapType,
+            @"type": ValueMapType,
         ) callconv(.winapi) HRESULT,
         Add: *const fn(
             self: *const IValueMap,

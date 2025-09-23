@@ -1305,7 +1305,7 @@ pub const IKEV2_ID_PAYLOAD_TYPE_MAX = IKEV2_ID_PAYLOAD_TYPE.MAX;
 
 pub const RAS_PROJECTION_INFO = extern struct {
     version: RASAPIVERSION,
-    type: RASPROJECTION_INFO_TYPE,
+    @"type": RASPROJECTION_INFO_TYPE,
     Anonymous: extern union {
         ppp: RASPPP_PROJECTION_INFO,
         ikev2: RASIKEV2_PROJECTION_INFO,
@@ -2244,7 +2244,7 @@ pub const MPR_FILTER_0 = extern struct {
 
 pub const MPRAPI_OBJECT_HEADER = extern struct {
     revision: u8,
-    type: u8,
+    @"type": u8,
     size: u16,
 };
 
@@ -2488,7 +2488,7 @@ pub const MPR_VPN_TS_IPv4_ADDR_RANGE = MPR_VPN_TS_TYPE.@"4_ADDR_RANGE";
 pub const MPR_VPN_TS_IPv6_ADDR_RANGE = MPR_VPN_TS_TYPE.@"6_ADDR_RANGE";
 
 pub const _MPR_VPN_SELECTOR = extern struct {
-    type: MPR_VPN_TS_TYPE,
+    @"type": MPR_VPN_TS_TYPE,
     protocolId: u8,
     portStart: u16,
     portEnd: u16,

@@ -659,7 +659,7 @@ pub const AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION = extern struct {
 };
 
 pub const APO_NOTIFICATION = extern struct {
-    type: APO_NOTIFICATION_TYPE,
+    @"type": APO_NOTIFICATION_TYPE,
     Anonymous: extern union {
         audioEndpointVolumeChange: AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION,
         audioEndpointPropertyChange: AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION,
@@ -681,7 +681,7 @@ pub const AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR = exte
 };
 
 pub const APO_NOTIFICATION_DESCRIPTOR = extern struct {
-    type: APO_NOTIFICATION_TYPE,
+    @"type": APO_NOTIFICATION_TYPE,
     Anonymous: extern union {
         audioEndpointVolume: AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR,
         audioEndpointPropertyChange: AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR,

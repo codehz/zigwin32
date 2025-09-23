@@ -1103,7 +1103,7 @@ pub const BLUETOOTH_AUTHENTICATE_RESPONSE = extern struct {
 };
 
 pub const SDP_ELEMENT_DATA = extern struct {
-    type: SDP_TYPE,
+    @"type": SDP_TYPE,
     specificType: SDP_SPECIFICTYPE,
     data: extern union {
         int128: SDP_LARGE_INTEGER_16,
@@ -1282,7 +1282,7 @@ pub const BTH_QUERY_DEVICE = extern struct {
 };
 
 pub const BTH_QUERY_SERVICE = extern struct {
-    type: u32 align(1),
+    @"type": u32 align(1),
     serviceHandle: u32 align(1),
     uuids: [12]SdpQueryUuid align(1),
     numRange: u32 align(1),

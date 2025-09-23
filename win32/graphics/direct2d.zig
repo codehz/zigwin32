@@ -722,7 +722,7 @@ pub const D2D1_PRESENT_OPTIONS_FORCE_DWORD = D2D1_PRESENT_OPTIONS{
 };
 
 pub const D2D1_RENDER_TARGET_PROPERTIES = extern struct {
-    type: D2D1_RENDER_TARGET_TYPE,
+    @"type": D2D1_RENDER_TARGET_TYPE,
     pixelFormat: D2D1_PIXEL_FORMAT,
     dpiX: f32,
     dpiY: f32,
@@ -4401,28 +4401,28 @@ pub const ID2D1Properties = extern union {
         SetValueByName: *const fn(
             self: *const ID2D1Properties,
             name: ?[*:0]const u16,
-            type: D2D1_PROPERTY_TYPE,
+            @"type": D2D1_PROPERTY_TYPE,
             data: [*:0]const u8,
             dataSize: u32,
         ) callconv(.winapi) HRESULT,
         SetValue: *const fn(
             self: *const ID2D1Properties,
             index: u32,
-            type: D2D1_PROPERTY_TYPE,
+            @"type": D2D1_PROPERTY_TYPE,
             data: [*:0]const u8,
             dataSize: u32,
         ) callconv(.winapi) HRESULT,
         GetValueByName: *const fn(
             self: *const ID2D1Properties,
             name: ?[*:0]const u16,
-            type: D2D1_PROPERTY_TYPE,
+            @"type": D2D1_PROPERTY_TYPE,
             data: [*:0]u8,
             dataSize: u32,
         ) callconv(.winapi) HRESULT,
         GetValue: *const fn(
             self: *const ID2D1Properties,
             index: u32,
-            type: D2D1_PROPERTY_TYPE,
+            @"type": D2D1_PROPERTY_TYPE,
             data: [*:0]u8,
             dataSize: u32,
         ) callconv(.winapi) HRESULT,
@@ -7402,7 +7402,7 @@ pub const ID2D1SvgElement = extern union {
         SetAttributeValuePod: *const fn(
             self: *const ID2D1SvgElement,
             name: ?[*:0]const u16,
-            type: D2D1_SVG_ATTRIBUTE_POD_TYPE,
+            @"type": D2D1_SVG_ATTRIBUTE_POD_TYPE,
             // TODO: what to do with BytesParamIndex 3?
             value: ?*const anyopaque,
             valueSizeInBytes: u32,
@@ -7410,7 +7410,7 @@ pub const ID2D1SvgElement = extern union {
         SetAttributeValueString: *const fn(
             self: *const ID2D1SvgElement,
             name: ?[*:0]const u16,
-            type: D2D1_SVG_ATTRIBUTE_STRING_TYPE,
+            @"type": D2D1_SVG_ATTRIBUTE_STRING_TYPE,
             value: ?[*:0]const u16,
         ) callconv(.winapi) HRESULT,
         GetAttributeValueObj: *const fn(
@@ -7422,7 +7422,7 @@ pub const ID2D1SvgElement = extern union {
         GetAttributeValuePod: *const fn(
             self: *const ID2D1SvgElement,
             name: ?[*:0]const u16,
-            type: D2D1_SVG_ATTRIBUTE_POD_TYPE,
+            @"type": D2D1_SVG_ATTRIBUTE_POD_TYPE,
             // TODO: what to do with BytesParamIndex 3?
             value: ?*anyopaque,
             valueSizeInBytes: u32,
@@ -7430,14 +7430,14 @@ pub const ID2D1SvgElement = extern union {
         GetAttributeValueString: *const fn(
             self: *const ID2D1SvgElement,
             name: ?[*:0]const u16,
-            type: D2D1_SVG_ATTRIBUTE_STRING_TYPE,
+            @"type": D2D1_SVG_ATTRIBUTE_STRING_TYPE,
             value: [*:0]u16,
             valueCount: u32,
         ) callconv(.winapi) HRESULT,
         GetAttributeValueLength: *const fn(
             self: *const ID2D1SvgElement,
             name: ?[*:0]const u16,
-            type: D2D1_SVG_ATTRIBUTE_STRING_TYPE,
+            @"type": D2D1_SVG_ATTRIBUTE_STRING_TYPE,
             valueLength: ?*u32,
         ) callconv(.winapi) HRESULT,
     };

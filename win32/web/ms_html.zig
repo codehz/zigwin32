@@ -10722,7 +10722,7 @@ pub const htmlCaptionVAlign_Max = htmlCaptionVAlign._Max;
 
 pub const htmlFrame = enum(i32) {
     NotSet = 0,
-    void = 1,
+    @"void" = 1,
     above = 2,
     below = 3,
     hsides = 4,
@@ -10734,7 +10734,7 @@ pub const htmlFrame = enum(i32) {
     _Max = 2147483647,
 };
 pub const htmlFrameNotSet = htmlFrame.NotSet;
-pub const htmlFramevoid = htmlFrame.void;
+pub const htmlFramevoid = htmlFrame.@"void";
 pub const htmlFrameabove = htmlFrame.above;
 pub const htmlFramebelow = htmlFrame.below;
 pub const htmlFramehsides = htmlFrame.hsides;
@@ -54173,13 +54173,13 @@ pub const IEventTarget = extern union {
         base: IDispatch.VTable,
         addEventListener: *const fn(
             self: *const IEventTarget,
-            type: ?BSTR,
+            @"type": ?BSTR,
             listener: ?*IDispatch,
             useCapture: i16,
         ) callconv(.winapi) HRESULT,
         removeEventListener: *const fn(
             self: *const IEventTarget,
-            type: ?BSTR,
+            @"type": ?BSTR,
             listener: ?*IDispatch,
             useCapture: i16,
         ) callconv(.winapi) HRESULT,
@@ -55248,7 +55248,7 @@ pub const IHTMLCanvasElement = extern union {
         ) callconv(.winapi) HRESULT,
         toDataURL: *const fn(
             self: *const IHTMLCanvasElement,
-            type: ?BSTR,
+            @"type": ?BSTR,
             jpegquality: VARIANT,
             pUrl: ?*?BSTR,
         ) callconv(.winapi) HRESULT,
@@ -62092,7 +62092,7 @@ pub const IHTMLMediaElement = extern union {
         ) callconv(.winapi) HRESULT,
         canPlayType: *const fn(
             self: *const IHTMLMediaElement,
-            type: ?BSTR,
+            @"type": ?BSTR,
             canPlay: ?*?BSTR,
         ) callconv(.winapi) HRESULT,
         // TODO: this function has a "SpecialName", should Zig do anything with this?
@@ -70878,7 +70878,7 @@ pub const IActiveXUIHandlerSite3 = extern union {
             hwnd: ?HWND,
             text: ?[*:0]const u16,
             caption: ?[*:0]const u16,
-            type: u32,
+            @"type": u32,
             result: ?*i32,
         ) callconv(.winapi) HRESULT,
     };
@@ -72395,7 +72395,7 @@ pub const IOpenServiceActivity = extern union {
         ) callconv(.winapi) HRESULT,
         CanExecuteType: *const fn(
             self: *const IOpenServiceActivity,
-            type: OpenServiceActivityContentType,
+            @"type": OpenServiceActivityContentType,
             pfCanExecute: ?*BOOL,
         ) callconv(.winapi) HRESULT,
         Preview: *const fn(
@@ -72411,7 +72411,7 @@ pub const IOpenServiceActivity = extern union {
         ) callconv(.winapi) HRESULT,
         CanPreviewType: *const fn(
             self: *const IOpenServiceActivity,
-            type: OpenServiceActivityContentType,
+            @"type": OpenServiceActivityContentType,
             pfCanPreview: ?*BOOL,
         ) callconv(.winapi) HRESULT,
         GetStatusText: *const fn(

@@ -628,7 +628,7 @@ pub const IXpsOMShareable = extern union {
         ) callconv(.winapi) HRESULT,
         GetType: *const fn(
             self: *const IXpsOMShareable,
-            type: ?*XPS_OBJECT_TYPE,
+            @"type": ?*XPS_OBJECT_TYPE,
         ) callconv(.winapi) HRESULT,
     };
     vtable: *const VTable,
@@ -3349,7 +3349,7 @@ pub const IXpsOMPage = extern union {
         ) callconv(.winapi) HRESULT,
         GenerateUnusedLookupKey: *const fn(
             self: *const IXpsOMPage,
-            type: XPS_OBJECT_TYPE,
+            @"type": XPS_OBJECT_TYPE,
             key: ?*?PWSTR,
         ) callconv(.winapi) HRESULT,
         Clone: *const fn(

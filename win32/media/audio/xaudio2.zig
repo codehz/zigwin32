@@ -1079,7 +1079,7 @@ pub const Large = HrtfEnvironment.Large;
 pub const Outdoors = HrtfEnvironment.Outdoors;
 
 pub const HrtfDirectivity = extern struct {
-    type: HrtfDirectivityType,
+    @"type": HrtfDirectivityType,
     scaling: f32,
 };
 
@@ -1102,7 +1102,7 @@ pub const NaturalDecay = HrtfDistanceDecayType.NaturalDecay;
 pub const CustomDecay = HrtfDistanceDecayType.CustomDecay;
 
 pub const HrtfDistanceDecay = extern struct {
-    type: HrtfDistanceDecayType,
+    @"type": HrtfDistanceDecayType,
     maxGain: f32,
     minGain: f32,
     unityGainDistance: f32,

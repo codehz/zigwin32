@@ -4630,7 +4630,7 @@ pub const ID3D12Device = extern union {
         ) callconv(.winapi) HRESULT,
         CreateCommandAllocator: *const fn(
             self: *const ID3D12Device,
-            type: D3D12_COMMAND_LIST_TYPE,
+            @"type": D3D12_COMMAND_LIST_TYPE,
             riid: ?*const Guid,
             ppCommandAllocator: **anyopaque,
         ) callconv(.winapi) HRESULT,
@@ -4649,7 +4649,7 @@ pub const ID3D12Device = extern union {
         CreateCommandList: *const fn(
             self: *const ID3D12Device,
             nodeMask: u32,
-            type: D3D12_COMMAND_LIST_TYPE,
+            @"type": D3D12_COMMAND_LIST_TYPE,
             pCommandAllocator: ?*ID3D12CommandAllocator,
             pInitialState: ?*ID3D12PipelineState,
             riid: ?*const Guid,
@@ -5506,7 +5506,7 @@ pub const ID3D12Device4 = extern union {
         CreateCommandList1: *const fn(
             self: *const ID3D12Device4,
             nodeMask: u32,
-            type: D3D12_COMMAND_LIST_TYPE,
+            @"type": D3D12_COMMAND_LIST_TYPE,
             flags: D3D12_COMMAND_LIST_FLAGS,
             riid: ?*const Guid,
             ppCommandList: **anyopaque,

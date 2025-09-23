@@ -486,7 +486,7 @@ pub const IDMOVideoOutputOptimizations = extern union {
 };
 
 pub const DMO_PARTIAL_MEDIATYPE = extern struct {
-    type: Guid,
+    @"type": Guid,
     subtype: Guid,
 };
 

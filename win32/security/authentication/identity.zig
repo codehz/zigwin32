@@ -6892,7 +6892,7 @@ pub const SL_ACTIVATION_TYPE_ACTIVE_DIRECTORY = SL_ACTIVATION_TYPE.ACTIVE_DIRECT
 
 pub const SL_ACTIVATION_INFO_HEADER = extern struct {
     cbSize: u32,
-    type: SL_ACTIVATION_TYPE,
+    @"type": SL_ACTIVATION_TYPE,
 };
 
 pub const SL_AD_ACTIVATION_INFO = extern struct {

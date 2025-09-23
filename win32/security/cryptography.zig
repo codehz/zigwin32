@@ -8109,7 +8109,7 @@ pub const INFORMATIONCARD_HASH_CRYPTO_PARAMETERS = extern struct {
 };
 
 pub const INFORMATIONCARD_CRYPTO_HANDLE = extern struct {
-    type: HandleType,
+    @"type": HandleType,
     expiration: i64,
     cryptoParameters: ?*anyopaque,
 };

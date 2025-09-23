@@ -3302,7 +3302,7 @@ pub const UCPTrie = extern struct {
     dataLength: i32,
     highStart: i32,
     shifted12HighStart: u16,
-    type: i8,
+    @"type": i8,
     valueWidth: i8,
     reserved32: u32,
     reserved16: u16,
@@ -5142,7 +5142,7 @@ pub const UCharEnumTypeRange = *const fn(
     context: ?*const anyopaque,
     start: i32,
     limit: i32,
-    type: UCharCategory,
+    @"type": UCharCategory,
 ) callconv(.winapi) i8;
 
 pub const UEnumCharNamesFn = *const fn(
@@ -10305,7 +10305,7 @@ pub extern "icu" fn uloc_countAvailable(
 ) callconv(.winapi) i32;
 
 pub extern "icu" fn uloc_openAvailableByType(
-    type: ULocAvailableType,
+    @"type": ULocAvailableType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*UEnumeration;
 
@@ -10467,7 +10467,7 @@ pub extern "icu" fn ures_getVersion(
 
 pub extern "icu" fn ures_getLocaleByType(
     resourceBundle: ?*const UResourceBundle,
-    type: ULocDataLocaleType,
+    @"type": ULocDataLocaleType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?PSTR;
 
@@ -10683,7 +10683,7 @@ pub extern "icu" fn uldn_openForContext(
 
 pub extern "icu" fn uldn_getContext(
     ldn: ?*const ULocaleDisplayNames,
-    type: UDisplayContextType,
+    @"type": UDisplayContextType,
     pErrorCode: ?*UErrorCode,
 ) callconv(.winapi) UDisplayContext;
 
@@ -10799,7 +10799,7 @@ pub extern "icu" fn ucpmap_getRange(
 ) callconv(.winapi) i32;
 
 pub extern "icu" fn ucptrie_openFromBinary(
-    type: UCPTrieType,
+    @"type": UCPTrieType,
     valueWidth: UCPTrieValueWidth,
     data: ?*const anyopaque,
     length: i32,
@@ -10917,7 +10917,7 @@ pub extern "icu" fn umutablecptrie_setRange(
 
 pub extern "icu" fn umutablecptrie_buildImmutable(
     trie: ?*UMutableCPTrie,
-    type: UCPTrieType,
+    @"type": UCPTrieType,
     valueWidth: UCPTrieValueWidth,
     pErrorCode: ?*UErrorCode,
 ) callconv(.winapi) ?*UCPTrie;
@@ -13088,7 +13088,7 @@ pub extern "icu" fn usprep_open(
 ) callconv(.winapi) ?*UStringPrepProfile;
 
 pub extern "icu" fn usprep_openByType(
-    type: UStringPrepProfileType,
+    @"type": UStringPrepProfileType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*UStringPrepProfile;
 
@@ -13197,7 +13197,7 @@ pub extern "icu" fn uidna_nameToUnicodeUTF8(
 ) callconv(.winapi) i32;
 
 pub extern "icu" fn ubrk_open(
-    type: UBreakIteratorType,
+    @"type": UBreakIteratorType,
     locale: ?[*:0]const u8,
     text: ?*const u16,
     textLength: i32,
@@ -13300,7 +13300,7 @@ pub extern "icu" fn ubrk_getRuleStatusVec(
 
 pub extern "icu" fn ubrk_getLocaleByType(
     bi: ?*const UBreakIterator,
-    type: ULocDataLocaleType,
+    @"type": ULocDataLocaleType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?PSTR;
 
@@ -13367,7 +13367,7 @@ pub extern "icu" fn ucal_open(
     zoneID: ?*const u16,
     len: i32,
     locale: ?[*:0]const u8,
-    type: UCalendarType,
+    @"type": UCalendarType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*?*anyopaque;
 
@@ -13396,7 +13396,7 @@ pub extern "icu" fn ucal_getTimeZoneID(
 
 pub extern "icu" fn ucal_getTimeZoneDisplayName(
     cal: ?*const ?*anyopaque,
-    type: UCalendarDisplayNameType,
+    @"type": UCalendarDisplayNameType,
     locale: ?[*:0]const u8,
     result: ?*u16,
     resultLength: i32,
@@ -13515,13 +13515,13 @@ pub extern "icu" fn ucal_clear(
 pub extern "icu" fn ucal_getLimit(
     cal: ?*const ?*anyopaque,
     field: UCalendarDateFields,
-    type: UCalendarLimitType,
+    @"type": UCalendarLimitType,
     status: ?*UErrorCode,
 ) callconv(.winapi) i32;
 
 pub extern "icu" fn ucal_getLocaleByType(
     cal: ?*const ?*anyopaque,
-    type: ULocDataLocaleType,
+    @"type": ULocDataLocaleType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?PSTR;
 
@@ -13577,7 +13577,7 @@ pub extern "icu" fn ucal_getFieldDifference(
 
 pub extern "icu" fn ucal_getTimeZoneTransitionDate(
     cal: ?*const ?*anyopaque,
-    type: UTimeZoneTransitionType,
+    @"type": UTimeZoneTransitionType,
     transition: ?*f64,
     status: ?*UErrorCode,
 ) callconv(.winapi) i8;
@@ -13842,7 +13842,7 @@ pub extern "icu" fn ucol_getRulesEx(
 
 pub extern "icu" fn ucol_getLocaleByType(
     coll: ?*const UCollator,
-    type: ULocDataLocaleType,
+    @"type": ULocDataLocaleType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?PSTR;
 
@@ -14214,7 +14214,7 @@ pub extern "icu" fn ulistfmt_open(
 
 pub extern "icu" fn ulistfmt_openForType(
     locale: ?[*:0]const u8,
-    type: UListFormatterType,
+    @"type": UListFormatterType,
     width: UListFormatterWidth,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*UListFormatter;
@@ -14283,7 +14283,7 @@ pub extern "icu" fn ulocdata_getExemplarSet(
 
 pub extern "icu" fn ulocdata_getDelimiter(
     uld: ?*ULocaleData,
-    type: ULocaleDataDelimiterType,
+    @"type": ULocaleDataDelimiterType,
     result: ?*u16,
     resultLength: i32,
     status: ?*UErrorCode,
@@ -14696,7 +14696,7 @@ pub extern "icu" fn unum_setSymbol(
 
 pub extern "icu" fn unum_getLocaleByType(
     fmt: ?*const ?*anyopaque,
-    type: ULocDataLocaleType,
+    @"type": ULocDataLocaleType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?PSTR;
 
@@ -14708,7 +14708,7 @@ pub extern "icu" fn unum_setContext(
 
 pub extern "icu" fn unum_getContext(
     fmt: ?*const ?*anyopaque,
-    type: UDisplayContextType,
+    @"type": UDisplayContextType,
     status: ?*UErrorCode,
 ) callconv(.winapi) UDisplayContext;
 
@@ -14881,7 +14881,7 @@ pub extern "icu" fn udat_applyPattern(
 
 pub extern "icu" fn udat_getSymbols(
     fmt: ?*const ?*anyopaque,
-    type: UDateFormatSymbolType,
+    @"type": UDateFormatSymbolType,
     symbolIndex: i32,
     result: ?*u16,
     resultLength: i32,
@@ -14890,12 +14890,12 @@ pub extern "icu" fn udat_getSymbols(
 
 pub extern "icu" fn udat_countSymbols(
     fmt: ?*const ?*anyopaque,
-    type: UDateFormatSymbolType,
+    @"type": UDateFormatSymbolType,
 ) callconv(.winapi) i32;
 
 pub extern "icu" fn udat_setSymbols(
     format: ?*?*anyopaque,
-    type: UDateFormatSymbolType,
+    @"type": UDateFormatSymbolType,
     symbolIndex: i32,
     value: ?*u16,
     valueLength: i32,
@@ -14904,7 +14904,7 @@ pub extern "icu" fn udat_setSymbols(
 
 pub extern "icu" fn udat_getLocaleByType(
     fmt: ?*const ?*anyopaque,
-    type: ULocDataLocaleType,
+    @"type": ULocDataLocaleType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?PSTR;
 
@@ -14916,7 +14916,7 @@ pub extern "icu" fn udat_setContext(
 
 pub extern "icu" fn udat_getContext(
     fmt: ?*const ?*anyopaque,
-    type: UDisplayContextType,
+    @"type": UDisplayContextType,
     status: ?*UErrorCode,
 ) callconv(.winapi) UDisplayContext;
 
@@ -15200,7 +15200,7 @@ pub extern "icu" fn uplrules_open(
 
 pub extern "icu" fn uplrules_openForType(
     locale: ?[*:0]const u8,
-    type: UPluralType,
+    @"type": UPluralType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*UPluralRules;
 
@@ -15632,7 +15632,7 @@ pub extern "icu" fn uregion_getRegionFromNumericCode(
 ) callconv(.winapi) ?*URegion;
 
 pub extern "icu" fn uregion_getAvailable(
-    type: URegionType,
+    @"type": URegionType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*UEnumeration;
 
@@ -15647,7 +15647,7 @@ pub extern "icu" fn uregion_getContainingRegion(
 
 pub extern "icu" fn uregion_getContainingRegionOfType(
     uregion: ?*const URegion,
-    type: URegionType,
+    @"type": URegionType,
 ) callconv(.winapi) ?*URegion;
 
 pub extern "icu" fn uregion_getContainedRegions(
@@ -15657,7 +15657,7 @@ pub extern "icu" fn uregion_getContainedRegions(
 
 pub extern "icu" fn uregion_getContainedRegionsOfType(
     uregion: ?*const URegion,
-    type: URegionType,
+    @"type": URegionType,
     status: ?*UErrorCode,
 ) callconv(.winapi) ?*UEnumeration;
 
@@ -16041,7 +16041,7 @@ pub extern "icu" fn uspoof_areConfusableUTF8(
 
 pub extern "icu" fn uspoof_getSkeleton(
     sc: ?*const USpoofChecker,
-    type: u32,
+    @"type": u32,
     id: ?*const u16,
     length: i32,
     dest: ?*u16,
@@ -16051,7 +16051,7 @@ pub extern "icu" fn uspoof_getSkeleton(
 
 pub extern "icu" fn uspoof_getSkeletonUTF8(
     sc: ?*const USpoofChecker,
-    type: u32,
+    @"type": u32,
     id: ?[*:0]const u8,
     length: i32,
     dest: ?PSTR,

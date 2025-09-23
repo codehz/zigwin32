@@ -341,7 +341,7 @@ pub extern "chakra" fn JsConvertValueToBoolean(
 
 pub extern "chakra" fn JsGetValueType(
     value: ?*anyopaque,
-    type: ?*JsValueType,
+    @"type": ?*JsValueType,
 ) callconv(.winapi) JsErrorCode;
 
 pub extern "chakra" fn JsDoubleToNumber(

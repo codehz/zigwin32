@@ -12934,11 +12934,9 @@ _,
     // Instead, we use FormatMessage to access a string for each error.
     pub fn format(
         self: WIN32_ERROR,
-        comptime fmt: []const u8,
-        options: @import("std").fmt.FormatOptions,
         writer: anytype,
     ) !void {
-        try @import("zig.zig").fmtError(@intFromEnum(self)).format(fmt, options, writer);
+        try @import("zig.zig").fmtError(@intFromEnum(self)).format(writer);
     }
 };
 pub const NO_ERROR = WIN32_ERROR.NO_ERROR;

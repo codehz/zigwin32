@@ -2287,7 +2287,7 @@ pub extern "propsys" fn PSPropertyBag_ReadType(
     propBag: ?*IPropertyBag,
     propName: ?[*:0]const u16,
     @"var": ?*VARIANT,
-    type: u16,
+    @"type": u16,
 ) callconv(.winapi) HRESULT;
 
 // TODO: this type is limited to platform 'windows6.1'

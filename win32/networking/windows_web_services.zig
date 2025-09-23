@@ -2942,7 +2942,7 @@ pub const WS_HTTP_MESSAGE_MAPPING = extern struct {
 pub const WS_ELEMENT_DESCRIPTION = extern struct {
     elementLocalName: ?*WS_XML_STRING,
     elementNs: ?*WS_XML_STRING,
-    type: WS_TYPE,
+    @"type": WS_TYPE,
     typeDescription: ?*anyopaque,
 };
 
@@ -3511,7 +3511,7 @@ pub const WS_FIELD_DESCRIPTION = extern struct {
     mapping: WS_FIELD_MAPPING,
     localName: ?*WS_XML_STRING,
     ns: ?*WS_XML_STRING,
-    type: WS_TYPE,
+    @"type": WS_TYPE,
     typeDescription: ?*anyopaque,
     offset: u32,
     options: u32,
@@ -3574,7 +3574,7 @@ pub const WS_CUSTOM_TYPE_DESCRIPTION = extern struct {
 pub const WS_ATTRIBUTE_DESCRIPTION = extern struct {
     attributeLocalName: ?*WS_XML_STRING,
     attributeNs: ?*WS_XML_STRING,
-    type: WS_TYPE,
+    @"type": WS_TYPE,
     typeDescription: ?*anyopaque,
 };
 
@@ -3782,7 +3782,7 @@ pub const WS_SECURITY_BINDING_PROPERTY_CONSTRAINT = extern struct {
 };
 
 pub const WS_SECURITY_BINDING_CONSTRAINT = extern struct {
-    type: WS_SECURITY_BINDING_CONSTRAINT_TYPE,
+    @"type": WS_SECURITY_BINDING_CONSTRAINT_TYPE,
     propertyConstraints: ?*WS_SECURITY_BINDING_PROPERTY_CONSTRAINT,
     propertyConstraintCount: u32,
 };
@@ -3871,7 +3871,7 @@ pub const WS_CHANNEL_PROPERTY_CONSTRAINT = extern struct {
 };
 
 pub const WS_POLICY_EXTENSION = extern struct {
-    type: WS_POLICY_EXTENSION_TYPE,
+    @"type": WS_POLICY_EXTENSION_TYPE,
 };
 
 pub const WS_ENDPOINT_POLICY_EXTENSION = extern struct {
@@ -5691,7 +5691,7 @@ pub extern "webservices" fn WsReadAttribute(
 pub extern "webservices" fn WsReadType(
     reader: ?*WS_XML_READER,
     typeMapping: WS_TYPE_MAPPING,
-    type: WS_TYPE,
+    @"type": WS_TYPE,
     typeDescription: ?*const anyopaque,
     readOption: WS_READ_OPTION,
     heap: ?*WS_HEAP,
@@ -5727,7 +5727,7 @@ pub extern "webservices" fn WsWriteAttribute(
 pub extern "webservices" fn WsWriteType(
     writer: ?*WS_XML_WRITER,
     typeMapping: WS_TYPE_MAPPING,
-    type: WS_TYPE,
+    @"type": WS_TYPE,
     typeDescription: ?*const anyopaque,
     writeOption: WS_WRITE_OPTION,
     // TODO: what to do with BytesParamIndex 6?

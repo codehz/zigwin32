@@ -3907,7 +3907,7 @@ pub const ONEX_AUTH_PARAMS = extern struct {
 
 pub const ONEX_EAP_ERROR = extern struct {
     dwWinError: u32,
-    type: EAP_METHOD_TYPE,
+    @"type": EAP_METHOD_TYPE,
     dwReasonCode: u32,
     rootCauseGuid: Guid,
     repairGuid: Guid,

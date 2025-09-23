@@ -725,7 +725,7 @@ pub const TS_RT_OPAQUE = TsRunType.OPAQUE;
 
 pub const TS_RUNINFO = extern struct {
     uCount: u32,
-    type: TsRunType,
+    @"type": TsRunType,
 };
 
 // TODO: this type is limited to platform 'windows5.0'
@@ -5588,7 +5588,7 @@ pub const TF_CT_SYSCOLOR = TF_DA_COLORTYPE.SYSCOLOR;
 pub const TF_CT_COLORREF = TF_DA_COLORTYPE.COLORREF;
 
 pub const TF_DA_COLOR = extern struct {
-    type: TF_DA_COLORTYPE,
+    @"type": TF_DA_COLORTYPE,
     Anonymous: extern union {
         nIndex: i32,
         cr: u32,

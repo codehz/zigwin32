@@ -2298,7 +2298,7 @@ pub const ISpatialAudioObjectRenderStream = extern union {
         base: ISpatialAudioObjectRenderStreamBase.VTable,
         ActivateSpatialAudioObject: *const fn(
             self: *const ISpatialAudioObjectRenderStream,
-            type: AudioObjectType,
+            @"type": AudioObjectType,
             audioObject: **ISpatialAudioObject,
         ) callconv(.winapi) HRESULT,
     };
@@ -2338,7 +2338,7 @@ pub const ISpatialAudioClient = extern union {
         base: IUnknown.VTable,
         GetStaticObjectPosition: *const fn(
             self: *const ISpatialAudioClient,
-            type: AudioObjectType,
+            @"type": AudioObjectType,
             x: ?*f32,
             y: ?*f32,
             z: ?*f32,
@@ -2594,7 +2594,7 @@ pub const ISpatialAudioObjectRenderStreamForHrtf = extern union {
         base: ISpatialAudioObjectRenderStreamBase.VTable,
         ActivateSpatialAudioObjectForHrtf: *const fn(
             self: *const ISpatialAudioObjectRenderStreamForHrtf,
-            type: AudioObjectType,
+            @"type": AudioObjectType,
             audioObject: **ISpatialAudioObjectForHrtf,
         ) callconv(.winapi) HRESULT,
     };
@@ -2934,7 +2934,7 @@ pub const IAudioSystemEffectsPropertyChangeNotificationClient = extern union {
         base: IUnknown.VTable,
         OnPropertyChanged: *const fn(
             self: *const IAudioSystemEffectsPropertyChangeNotificationClient,
-            type: AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE,
+            @"type": AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE,
             key: PROPERTYKEY,
         ) callconv(.winapi) HRESULT,
     };
@@ -4393,12 +4393,12 @@ pub const ISpatialAudioObjectRenderStreamForMetadata = extern union {
         base: ISpatialAudioObjectRenderStreamBase.VTable,
         ActivateSpatialAudioObjectForMetadataCommands: *const fn(
             self: *const ISpatialAudioObjectRenderStreamForMetadata,
-            type: AudioObjectType,
+            @"type": AudioObjectType,
             audioObject: **ISpatialAudioObjectForMetadataCommands,
         ) callconv(.winapi) HRESULT,
         ActivateSpatialAudioObjectForMetadataItems: *const fn(
             self: *const ISpatialAudioObjectRenderStreamForMetadata,
-            type: AudioObjectType,
+            @"type": AudioObjectType,
             audioObject: **ISpatialAudioObjectForMetadataItems,
         ) callconv(.winapi) HRESULT,
     };
